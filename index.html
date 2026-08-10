@@ -1,516 +1,841 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaishnavi Shekar — UI/UX Designer & AI-Powered Developer</title>
-    <meta name="description" content="Portfolio of Vaishnavi Shekar — Aspiring UI/UX Designer, Web Designer, and AI-powered Developer based in Bengaluru.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN for instant robust utility styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            bg: '#09090B',
-                            card: '#18181B',
-                            cardHover: '#27272A',
-                            border: '#27272A',
-                            accent: '#6366F1',
-                            accentHover: '#4F46E5',
-                            muted: '#A1A1AA',
-                            emerald: '#10B981'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom Deep Aesthetics CSS -->
-    <style>
-        body {
-            background-color: #09090B;
-            color: #F4F4F5;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        /* Subtle Geometric Background Grid */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        }
-
-        /* Gradient Text Accent */
-        .text-glow {
-            background: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 50%, #6366F1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Custom Card Hover Animation */
-        .card-studio {
-            background-color: #18181B;
-            border: 1px solid #27272A;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-studio:hover {
-            border-color: rgba(99, 102, 241, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
-        }
-
-        /* Custom Button Styling */
-        .btn-glow {
-            background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-            transition: all 0.2s ease;
-        }
-        .btn-glow:hover {
-            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
-            transform: translateY(-1px);
-        }
-
-        .wf-step-btn.active {
-            background-color: #6366F1;
-            color: #FFFFFF;
-            border-color: #6366F1;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaishnavi Shekar — UI/UX Designer & AI-Powered Developer</title>
+  <meta name="description" content="Portfolio of Vaishnavi Shekar. UI/UX Designer, Web Designer, and AI-Powered Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-brand-bg text-zinc-100 antialiased bg-grid selection:bg-indigo-500 selection:text-white">
+<body>
 
-    <!-- NAVIGATION BAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-xl border-b border-brand-border">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#hero" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center font-extrabold text-indigo-400 group-hover:scale-105 transition-transform">
-                    VS
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-bold text-sm text-white tracking-tight">Vaishnavi Shekar</span>
-                    <span class="text-xs text-brand-muted">UI/UX • Code • AI</span>
-                </div>
-            </a>
-
-            <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-muted">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#ai-workflow" class="hover:text-white transition-colors">AI Workflow</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="#design-system" class="hover:text-white transition-colors">Design System</a>
-                <a href="#resume" class="hover:text-white transition-colors">Resume</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-4">
-                <a href="#contact" class="px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-800 border border-zinc-700 text-white hover:bg-zinc-700 transition-all">Let's Connect</a>
-                <a href="#projects" class="btn-glow px-4 py-2 text-xs font-semibold rounded-lg text-white">View Work</a>
-            </div>
-        </div>
-    </header>
-
-    <main class="pt-20">
-        <!-- HERO SECTION -->
-        <section id="hero" class="min-h-[85vh] flex items-center justify-center relative px-6 py-20 overflow-hidden">
-            <!-- Glowing Glow Effects -->
-            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-            <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px] pointer-events-none"></div>
-
-            <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-400">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>Incoming B.Tech Civil Engineering @ BMSCE • Open for Web & UI/UX Roles</span>
-                </div>
-
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] text-glow">
-                    Designing intelligent digital experiences. <br class="hidden sm:block">
-                    Building them with code & AI.
-                </h1>
-
-                <p class="max-w-2xl mx-auto text-base sm:text-lg text-brand-muted font-normal leading-relaxed">
-                    I blend structured engineering logic, user-centric interface design, modern front-end code, and AI workflows to build performant, accessible web products.
-                </p>
-
-                <!-- Hero Badges -->
-                <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">01</span> UI/UX Design</span>
-                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">02</span> Front-End Code</span>
-                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">03</span> AI Workflows</span>
-                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">04</span> System Design</span>
-                </div>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="#projects" class="btn-glow w-full sm:w-auto px-8 py-3.5 text-sm font-semibold rounded-xl text-white">View My Work &rarr;</a>
-                    <a href="#resume" class="w-full sm:w-auto px-8 py-3.5 text-sm font-semibold rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 hover:bg-zinc-800 transition-colors">View Resume</a>
-                    <a href="#contact" class="w-full sm:w-auto px-6 py-3.5 text-sm font-semibold text-brand-muted hover:text-white transition-colors">Let's Connect</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section id="about" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <div class="lg:col-span-5 space-y-4">
-                    <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">01 // PHILOSOPHY</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Engineering discipline meets interface craft.</h2>
-                    <p class="text-brand-muted text-sm leading-relaxed">
-                        My civil engineering background provides a structured approach to problem solving. I view UI/UX design not as superficial decoration, but as blueprinting functional digital systems.
-                    </p>
-                </div>
-
-                <div class="lg:col-span-7 card-studio p-8 rounded-2xl space-y-6">
-                    <h3 class="text-xl font-bold text-white">How I Approach Product Creation</h3>
-                    <p class="text-brand-muted text-sm leading-relaxed">
-                        "I don't just want to make websites look visually attractive. I want to deeply understand user intent, decompose complex requirements, architect accessible component systems, and write clean front-end code."
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
-                            <span class="font-mono text-xs text-indigo-400 block mb-1">01. DESIGN THINKING</span>
-                            <h4 class="font-semibold text-white text-sm">User-Centered & Structured</h4>
-                            <p class="text-xs text-brand-muted mt-1">Starting with clear intent, layout hierarchy, and responsive Figma components.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
-                            <span class="font-mono text-xs text-indigo-400 block mb-1">02. FRONT-END CODE</span>
-                            <h4 class="font-semibold text-white text-sm">Semantic & Accessible</h4>
-                            <p class="text-xs text-brand-muted mt-1">Translating mockups into production-ready HTML, CSS, and modular JS.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
-                            <span class="font-mono text-xs text-indigo-400 block mb-1">03. AI ACCELERATION</span>
-                            <h4 class="font-semibold text-white text-sm">Intelligent Workflows</h4>
-                            <p class="text-xs text-brand-muted mt-1">Leveraging AI to accelerate prototyping, code auditing, and research.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
-                            <span class="font-mono text-xs text-indigo-400 block mb-1">04. PROBLEM SOLVING</span>
-                            <h4 class="font-semibold text-white text-sm">Systematic Rigor</h4>
-                            <p class="text-xs text-brand-muted mt-1">Applying engineering breakdown methods to web layout physics.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI SECTION -->
-        <section id="ai-workflow" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">02 // MODERN DESIGNER TOOLKIT</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">AI × Design × Development</h2>
-                <p class="text-brand-muted text-sm sm:text-base">
-                    AI is a force multiplier for rapid iteration, research synthesis, and prototyping speed.
-                </p>
-            </div>
-
-            <!-- Visual Workflow Stepper -->
-            <div class="card-studio p-8 rounded-2xl space-y-8">
-                <h3 class="text-xl font-bold text-white text-center">Interactive Human + AI Workflow Pipeline</h3>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2" id="wf-buttons">
-                    <button onclick="setWfStep(1)" class="wf-step-btn active px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">1. Problem</button>
-                    <button onclick="setWfStep(2)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">2. Research</button>
-                    <button onclick="setWfStep(3)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">3. AI Explore</button>
-                    <button onclick="setWfStep(4)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">4. Decisions</button>
-                    <button onclick="setWfStep(5)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">5. Prototype</button>
-                    <button onclick="setWfStep(6)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">6. Build</button>
-                    <button onclick="setWfStep(7)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">7. Iterate</button>
-                </div>
-
-                <div class="p-6 rounded-xl bg-zinc-900/90 border border-zinc-800 space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span id="wf-step-label" class="text-xs font-mono font-bold text-indigo-400">STAGE 01 OF 07</span>
-                        <span id="wf-owner-label" class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 font-medium border border-indigo-500/20">Human Led</span>
-                    </div>
-                    <h4 id="wf-title" class="text-lg font-bold text-white">Problem Definition & Requirement Mapping</h4>
-                    <p id="wf-desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
-                        Synthesizing target user intent, structural constraints, and performance metrics before initiating automated tools.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
-            <div class="space-y-4 mb-16">
-                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">03 // SELECTED CASE STUDIES</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Flagship Projects</h2>
-                <p class="text-brand-muted text-sm sm:text-base max-w-2xl">
-                    End-to-end UX/UI and web design concepts demonstrating problem solving, Figma prototyping, and front-end execution.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 gap-12">
-                <!-- Project 01 -->
-                <div class="card-studio rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-                    <div class="lg:col-span-7 p-8 sm:p-12 space-y-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-brand-border">
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between flex-wrap gap-2">
-                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">Self-Initiated Concept</span>
-                                <span class="font-mono text-xs text-brand-muted">UX / UI / Web Design</span>
-                            </div>
-                            <h3 class="text-2xl sm:text-3xl font-bold text-white">AURA — Premium Dining & Reservation Web Platform</h3>
-                            <p class="text-brand-muted text-sm leading-relaxed">
-                                A high-end culinary experience platform featuring smooth dynamic reservation scheduling, interactive digital menus, and WCAG AA accessible contrast design.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Figma</span>
-                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">HTML5 / CSS Grid</span>
-                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">JavaScript</span>
-                            </div>
-                        </div>
-                        <button onclick="openModal('aura')" class="btn-glow px-6 py-3 text-xs font-semibold rounded-xl text-white w-fit">
-                            Explore Case Study &rarr;
-                        </button>
-                    </div>
-                    <div class="lg:col-span-5 bg-zinc-900 p-8 flex items-center justify-center min-h-[260px]">
-                        <div class="w-full h-full rounded-xl bg-zinc-950 border border-zinc-800 p-4 space-y-3">
-                            <div class="flex gap-1.5 border-b border-zinc-800 pb-2">
-                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                            </div>
-                            <div class="h-28 bg-zinc-900 rounded flex items-center justify-center text-xs font-mono text-brand-muted">
-                                [ Figma Interactive Mockup Viewport ]
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 02 -->
-                <div class="card-studio rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-                    <div class="lg:col-span-7 p-8 sm:p-12 space-y-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-brand-border">
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between flex-wrap gap-2">
-                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">Self-Initiated Concept</span>
-                                <span class="font-mono text-xs text-brand-muted">SaaS / Product Design</span>
-                            </div>
-                            <h3 class="text-2xl sm:text-3xl font-bold text-white">PULSE AI — Workspace Dashboard & Telemetry</h3>
-                            <p class="text-brand-muted text-sm leading-relaxed">
-                                An analytics interface designed to synthesize cross-project priorities, task health metrics, and automated workspace insights with zero visual clutter.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Design Systems</span>
-                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Dashboard UI</span>
-                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Data Vis</span>
-                            </div>
-                        </div>
-                        <button onclick="openModal('pulse')" class="btn-glow px-6 py-3 text-xs font-semibold rounded-xl text-white w-fit">
-                            Explore Case Study &rarr;
-                        </button>
-                    </div>
-                    <div class="lg:col-span-5 bg-zinc-900 p-8 flex items-center justify-center min-h-[260px]">
-                        <div class="w-full h-full rounded-xl bg-zinc-950 border border-zinc-800 p-4 space-y-3">
-                            <div class="flex gap-1.5 border-b border-zinc-800 pb-2">
-                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                            </div>
-                            <div class="h-28 bg-zinc-900 rounded flex items-center justify-center text-xs font-mono text-brand-muted">
-                                [ Analytics Dashboard Viewport ]
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DESIGN SYSTEM SHOWCASE -->
-        <section id="design-system" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
-            <div class="space-y-4 mb-16">
-                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">04 // SYSTEMATIC UI PROOF</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Live Design System Tokens</h2>
-                <p class="text-brand-muted text-sm sm:text-base max-w-2xl">
-                    Demonstrating systematic design execution. This entire portfolio is powered by standardized tokens and state variants.
-                </p>
-            </div>
-
-            <div class="card-studio p-8 rounded-2xl space-y-10">
-                <!-- Palette Tokens -->
-                <div class="space-y-3">
-                    <span class="text-xs font-mono text-brand-muted uppercase tracking-wider">01. Color Palette Tokens</span>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
-                            <div class="h-8 rounded bg-[#09090B] border border-zinc-700"></div>
-                            <div class="text-[11px] font-mono text-white">Background</div>
-                            <div class="text-[10px] font-mono text-brand-muted">#09090B</div>
-                        </div>
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
-                            <div class="h-8 rounded bg-[#18181B] border border-zinc-700"></div>
-                            <div class="text-[11px] font-mono text-white">Surface Card</div>
-                            <div class="text-[10px] font-mono text-brand-muted">#18181B</div>
-                        </div>
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
-                            <div class="h-8 rounded bg-[#6366F1]"></div>
-                            <div class="text-[11px] font-mono text-white">Accent Primary</div>
-                            <div class="text-[10px] font-mono text-brand-muted">#6366F1</div>
-                        </div>
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
-                            <div class="h-8 rounded bg-[#10B981]"></div>
-                            <div class="text-[11px] font-mono text-white">Status Success</div>
-                            <div class="text-[10px] font-mono text-brand-muted">#10B981</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Interactive State Elements -->
-                <div class="space-y-3 pt-6 border-t border-brand-border">
-                    <span class="text-xs font-mono text-brand-muted uppercase tracking-wider">02. Component State Variants</span>
-                    <div class="flex flex-wrap items-center gap-4">
-                        <button class="btn-glow px-4 py-2 text-xs font-semibold rounded-lg text-white">Primary Active</button>
-                        <button class="px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-800 border border-zinc-700 text-white">Secondary Action</button>
-                        <button class="px-4 py-2 text-xs font-semibold text-brand-muted hover:text-white">Ghost Link &rarr;</button>
-                        <button class="px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-600 cursor-not-allowed">Disabled State</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RESUME SECTION -->
-        <section id="resume" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
-                <div class="space-y-4">
-                    <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">05 // CURRICULUM VITAE</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Verified Background</h2>
-                </div>
-                <button onclick="window.print()" class="btn-glow px-6 py-3 text-xs font-semibold rounded-xl text-white w-fit">
-                    Print / Save PDF
-                </button>
-            </div>
-
-            <div class="card-studio p-8 sm:p-12 rounded-2xl space-y-8">
-                <div class="border-b border-brand-border pb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <div>
-                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Vaishnavi Shekar</h3>
-                        <p class="text-indigo-400 font-mono text-xs sm:text-sm mt-1">Aspiring UI/UX Designer • Web Designer • AI-Powered Developer</p>
-                    </div>
-                    <div class="text-xs font-mono text-brand-muted space-y-1">
-                        <div>Bengaluru, Karnataka, India[cite: 1]</div>
-                        <div>vaishnavishekar2008@gmail.com[cite: 1]</div>
-                        <div>+91 8951675099 / +91 8139999349[cite: 1]</div>
-                    </div>
-                </div>
-
-                <div class="space-y-2">
-                    <span class="text-xs font-mono text-indigo-400 uppercase">Education</span>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between text-sm">
-                        <div>
-                            <span class="font-bold text-white">B.Tech in Civil Engineering</span>
-                            <span class="text-brand-muted text-xs block">BMS College of Engineering (BMSCE), Bengaluru</span>[cite: 1]
-                        </div>
-                        <span class="font-mono text-xs text-brand-muted">2026 – 2030</span>[cite: 1]
-                    </div>
-                </div>
-
-                <div class="space-y-2">
-                    <span class="text-xs font-mono text-indigo-400 uppercase">Certifications & Active Coursework</span>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
-                            <span class="font-bold text-white block">Anthropic AI Fluency</span>[cite: 1]
-                            <span class="text-brand-muted">Completed Certification</span>
-                        </div>
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
-                            <span class="font-bold text-white block">Microsoft AI/ML Fundamentals</span>
-                            <span class="text-brand-muted">Completed Fundamentals</span>
-                        </div>
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
-                            <span class="font-bold text-white block">Harvard CS50x</span>[cite: 1]
-                            <span class="text-brand-muted">Currently Learning</span>[cite: 1]
-                        </div>
-                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
-                            <span class="font-bold text-white block">Python Programming</span>[cite: 1]
-                            <span class="text-brand-muted">Active Skill Development</span>[cite: 1]
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
-            <div class="card-studio p-8 sm:p-16 rounded-3xl text-center space-y-6">
-                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">06 // GET IN TOUCH</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Let's build something extraordinary.</h2>
-                <p class="text-brand-muted text-sm sm:text-base max-w-xl mx-auto">
-                    Open for Web Design Internships, Junior UI/UX roles, and design collaborations in Bengaluru or remotely[cite: 1].
-                </p>
-
-                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <a href="mailto:vaishnavishekar2008@gmail.com" class="btn-glow px-8 py-3.5 text-sm font-semibold rounded-xl text-white">[cite: 1]
-                        Send Email
-                    </a>
-                    <a href="tel:+918951675099" class="px-8 py-3.5 text-sm font-semibold rounded-xl bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-colors">[cite: 1]
-                        Call / WhatsApp
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- CASE STUDY MODAL -->
-    <div id="modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="card-studio max-w-2xl w-full p-8 rounded-2xl space-y-6 relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-brand-muted hover:text-white text-xl">&times;</button>
-            <div id="modal-body" class="space-y-4">
-                <!-- Content injected via JS -->
-            </div>
-        </div>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">VS</span>
+        <span class="logo-dot"></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#ai-system" class="nav-link">AI Workflow</a>
+        <a href="#design-system" class="nav-link">Design System</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#resume" class="nav-link">Resume</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">Let's Connect</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- SCRIPT LOGIC -->
-    <script>
-        const wfData = {
-            1: { title: "1. Problem Definition & Intent Mapping", owner: "Human Led", desc: "Synthesizing constraints, business goals, and user intents before initiating design." },
-            2: { title: "2. Contextual Research & Benchmarking", owner: "Human + AI Co-Op", desc: "Using AI tools to aggregate competitive UI patterns, WCAG compliance metrics, and user task flow models." },
-            3: { title: "3. Rapid AI Design & Layout Exploration", owner: "AI Accelerated", desc: "Generating multi-variate component ideas, typography pairing options, design tokens, and CSS layout grids." },
-            4: { title: "4. Strategic Human Design Decisions", owner: "Human Decision", desc: "Applying taste, aesthetic judgment, accessibility auditing, and brand positioning to select optimal layouts." },
-            5: { title: "5. High-Fidelity Figma Prototyping", owner: "Human Crafted", desc: "Structuring auto-layout frames, interactive component variants, design tokens, and screen transitions in Figma." },
-            6: { title: "6. Front-End Code Implementation", owner: "AI-Assisted Code", desc: "Scaffolding semantic HTML, CSS utility tokens, and vanilla JS logic with AI pair programming." },
-            7: { title: "7. Accessibility Testing & Iteration", owner: "Human Validated", desc: "Validating contrast ratios, keyboard DOM navigation, mobile screen sizes, and performance score optimization." }
-        };
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-header">
+          <div class="badge-tag">
+            <span class="pulse-indicator"></span>
+            <span>Available for UI/UX & Web Roles</span>
+          </div>
+          <h1 class="hero-title">
+            DESIGN <span class="accent-text">×</span> CODE <span class="accent-text">×</span> AI
+          </h1>
+          <p class="hero-subtitle">
+            I design digital experiences and build them into reality. Combining UI/UX thinking, front-end development, and modern AI workflows to turn ideas into useful digital products.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#work" class="btn btn-primary">
+              <span>View My Work</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+            <a href="#resume" class="btn btn-secondary">
+              <span>Download Resume</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            </a>
+          </div>
+        </div>
 
-        function setWfStep(step) {
-            document.querySelectorAll('.wf-step-btn').forEach((btn, i) => {
-                if (i + 1 === step) btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
-            const d = wfData[step];
-            document.getElementById('wf-step-label').textContent = `STAGE 0${step} OF 07`;
-            document.getElementById('wf-owner-label').textContent = d.owner;
-            document.getElementById('wf-title').textContent = d.title;
-            document.getElementById('wf-desc').textContent = d.desc;
-        }
+        <!-- HERO INTERACTIVE COMPOSITION / VISUAL SHOWCASE -->
+        <div class="hero-visual-stage">
+          <div class="stage-frame">
+            <!-- Mockup Layer 1: PULSE Dashboard Preview -->
+            <div class="hero-card card-pulse" data-speed="0.05">
+              <div class="browser-header">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">pulse.ai/analytics</div>
+              </div>
+              <div class="mock-dash-mini">
+                <div class="dash-mini-sidebar">
+                  <div class="dash-mini-icon active"></div>
+                  <div class="dash-mini-icon"></div>
+                  <div class="dash-mini-icon"></div>
+                </div>
+                <div class="dash-mini-main">
+                  <div class="dash-mini-top">
+                    <span class="dash-mini-title">PULSE AI Analytics</span>
+                    <span class="dash-mini-badge">+24.8%</span>
+                  </div>
+                  <div class="dash-mini-chart">
+                    <div class="chart-bar" style="height: 40%"></div>
+                    <div class="chart-bar" style="height: 65%"></div>
+                    <div class="chart-bar" style="height: 50%"></div>
+                    <div class="chart-bar" style="height: 85%"></div>
+                    <div class="chart-bar" style="height: 95%"></div>
+                    <div class="chart-bar" style="height: 70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        const modals = {
-            aura: { title: "AURA Culinary Platform", text: "End-to-end dining web concept featuring dynamic reservation flows and full WCAG accessibility compliance." },
-            pulse: { title: "PULSE AI Dashboard", text: "SaaS interface conceptualized to aggregate cross-project telemetry and workspace metrics with zero clutter." }
-        };
+            <!-- Mockup Layer 2: AURA Restaurant UI Preview -->
+            <div class="hero-card card-aura" data-speed="0.02">
+              <div class="aura-mini-hero">
+                <div class="aura-mini-nav">
+                  <span class="aura-brand">AURA</span>
+                  <span class="aura-btn-mini">Reserve</span>
+                </div>
+                <div class="aura-mini-body">
+                  <h4>CULINARY ELEVATION</h4>
+                  <p>Seasonal Gastronomy & Artisanal Mixology</p>
+                </div>
+              </div>
+            </div>
 
-        function openModal(key) {
-            const m = modals[key];
-            document.getElementById('modal-body').innerHTML = `
-                <h3 class="text-2xl font-bold text-white">${m.title}</h3>
-                <p class="text-sm text-brand-muted leading-relaxed">${m.text}</p>
-                <button onclick="closeModal()" class="btn-glow px-4 py-2 text-xs font-semibold rounded-lg text-white mt-4">Close View</button>
-            `;
-            document.getElementById('modal').classList.remove('hidden');
-            document.getElementById('modal').classList.add('flex');
-        }
+            <!-- Mockup Layer 3: Floating Design Tokens / DS Card -->
+            <div class="hero-card card-tokens">
+              <div class="tokens-header">Design System Tokens</div>
+              <div class="tokens-grid">
+                <div class="token-swatch" style="background: #00E699;"><span>Primary</span></div>
+                <div class="token-swatch" style="background: #11151C;"><span>Surface</span></div>
+                <div class="token-swatch" style="background: #6C5CE7;"><span>Accent</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-            document.getElementById('modal').classList.remove('flex');
-        }
-    </script>
+    <!-- SELECTED WORK SECTION -->
+    <section id="work" class="section work-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">01 / PROJECT SHOWCASE</span>
+          <h2 class="section-title">Selected Work</h2>
+          <p class="section-desc">Fully designed and CSS-rendered interfaces. From UX concepts to code execution.</p>
+        </div>
+
+        <!-- PROJECT 01: AURA RESTAURANT UI/UX -->
+        <article class="project-card">
+          <div class="project-meta-bar">
+            <span class="project-tag">SELF-INITIATED PROJECT</span>
+            <span class="project-num">PROJECT 01</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-info">
+              <h3 class="project-title">AURA</h3>
+              <p class="project-subtitle">Restaurant UI/UX + Web Implementation</p>
+              <p class="project-summary">From UX concept to responsive web execution. Designed a modern, atmospheric web experience for a high-end dining establishment focused on seamless reservations and editorial brand storytelling.</p>
+              
+              <div class="project-tech-stack">
+                <span class="tech-pill">UI/UX</span>
+                <span class="tech-pill">Web Design</span>
+                <span class="tech-pill">Figma</span>
+                <span class="tech-pill">HTML5</span>
+                <span class="tech-pill">CSS3/Grid</span>
+                <span class="tech-pill">JavaScript</span>
+              </div>
+
+              <div class="project-cta-group">
+                <button class="btn btn-primary open-case-study" data-target="modal-aura">
+                  <span>Explore Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- CSS RENDERED REAL MOCKUP: AURA -->
+            <div class="project-visual-wrapper">
+              <div class="browser-window">
+                <div class="browser-top">
+                  <div class="window-buttons"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                  <div class="url-bar">https://aura-fine-dining.com</div>
+                </div>
+                <div class="browser-body aura-interface">
+                  <nav class="aura-nav">
+                    <div class="aura-logo">AURA</div>
+                    <div class="aura-links">
+                      <span>Menu</span>
+                      <span>Story</span>
+                      <span>Private Dining</span>
+                    </div>
+                    <button class="aura-cta-btn">Book Table</button>
+                  </nav>
+                  
+                  <div class="aura-hero-content">
+                    <span class="aura-kicker">Est. 2026 • Michelin Guide</span>
+                    <h1 class="aura-hero-heading">Crafting Culinary Memories</h1>
+                    <p class="aura-subtext">Seasonal tasting menus paired with rare artisanal vintages.</p>
+                  </div>
+
+                  <div class="aura-menu-preview">
+                    <div class="aura-dish-card">
+                      <div class="dish-tag">Signature</div>
+                      <h5>Truffle Infused Tagliolini</h5>
+                      <p>Wild mushrooms, aged parmesan, brown butter glaze.</p>
+                      <span class="dish-price">$38</span>
+                    </div>
+                    <div class="aura-dish-card">
+                      <div class="dish-tag">Chef's Choice</div>
+                      <h5>Dry-Aged Wagyu Striploin</h5>
+                      <p>Smoked bone marrow emulsion, charred ramps.</p>
+                      <span class="dish-price">$72</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile View Preview Overlay -->
+              <div class="mobile-phone-mockup">
+                <div class="phone-screen aura-mobile-ui">
+                  <div class="phone-header"><span class="phone-time">9:41</span></div>
+                  <div class="phone-nav"><span>AURA</span><div class="phone-hamburger"><span></span><span></span></div></div>
+                  <div class="phone-hero">
+                    <h6>Reserve Your Experience</h6>
+                    <button class="phone-btn">Select Date</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02: PULSE AI SAAS DASHBOARD -->
+        <article class="project-card">
+          <div class="project-meta-bar">
+            <span class="project-tag">SELF-INITIATED CONCEPT</span>
+            <span class="project-num">PROJECT 02</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-info">
+              <h3 class="project-title">PULSE</h3>
+              <p class="project-subtitle">AI SaaS Analytics Dashboard Concept</p>
+              <p class="project-summary">Designed a data-dense, dark-mode-first analytics interface for real-time AI model monitoring. Focuses on information architecture, high-contrast metrics visibility, and workflow automation controls.</p>
+              
+              <div class="project-tech-stack">
+                <span class="tech-pill">UI/UX</span>
+                <span class="tech-pill">Product Design</span>
+                <span class="tech-pill">Design System</span>
+                <span class="tech-pill">Responsive Design</span>
+                <span class="tech-pill">Accessibility</span>
+              </div>
+
+              <div class="project-cta-group">
+                <button class="btn btn-primary open-case-study" data-target="modal-pulse">
+                  <span>Explore Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- CSS RENDERED REAL MOCKUP: PULSE -->
+            <div class="project-visual-wrapper">
+              <div class="browser-window">
+                <div class="browser-top">
+                  <div class="window-buttons"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                  <div class="url-bar">https://app.pulse-ai.io/dashboard</div>
+                </div>
+                <div class="browser-body pulse-interface">
+                  <!-- Dashboard Sidebar -->
+                  <aside class="pulse-sidebar">
+                    <div class="pulse-logo">PULSE.AI</div>
+                    <ul class="pulse-menu">
+                      <li class="active"><i>📊</i> Overview</li>
+                      <li><i>⚡</i> Models</li>
+                      <li><i>🧠</i> AI Insights</li>
+                      <li><i>⚙️</i> Settings</li>
+                    </ul>
+                    <div class="pulse-user-profile">
+                      <div class="avatar">VS</div>
+                      <div class="user-meta">
+                        <span class="uname">Vaishnavi S.</span>
+                        <span class="urole">Pro Plan</span>
+                      </div>
+                    </div>
+                  </aside>
+
+                  <!-- Dashboard Main Area -->
+                  <main class="pulse-main">
+                    <header class="pulse-header">
+                      <div class="search-bar"><span class="search-icon">🔍</span> Query telemetry or AI models...</div>
+                      <div class="notifications">🔔 <span class="dot"></span></div>
+                    </header>
+
+                    <div class="pulse-kpis">
+                      <div class="kpi-card">
+                        <span class="kpi-label">Token Throughput</span>
+                        <div class="kpi-val">1.42 M/s <span class="up">+14%</span></div>
+                      </div>
+                      <div class="kpi-card">
+                        <span class="kpi-label">Latency (Avg)</span>
+                        <div class="kpi-val">124ms <span class="down">-8ms</span></div>
+                      </div>
+                      <div class="kpi-card">
+                        <span class="kpi-label">Active Deployments</span>
+                        <div class="kpi-val">18/20</div>
+                      </div>
+                    </div>
+
+                    <!-- Interactive Chart Area -->
+                    <div class="pulse-chart-card">
+                      <div class="chart-header">
+                        <h6>Model Usage vs Latency</h6>
+                        <span class="live-pill">LIVE</span>
+                      </div>
+                      <div class="chart-svg-container">
+                        <svg viewBox="0 0 500 120" class="pulse-svg-chart">
+                          <polyline fill="none" stroke="#00E699" stroke-width="3" points="0,90 60,70 120,80 180,30 240,50 300,20 360,40 420,15 480,35 500,25" />
+                          <polyline fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="4" points="0,110 60,95 120,100 180,70 240,85 300,60 360,75 420,50 480,65 500,55" />
+                        </svg>
+                      </div>
+                    </div>
+                  </main>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: UX REDESIGN CASE STUDY -->
+        <article class="project-card">
+          <div class="project-meta-bar">
+            <span class="project-tag">SELF-INITIATED UX CASE STUDY</span>
+            <span class="project-num">PROJECT 03</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-info">
+              <h3 class="project-title">E-Commerce Checkout Transformation</h3>
+              <p class="project-subtitle">UX Wireframing & Friction Reduction</p>
+              <p class="project-summary">Identified checkout flow drop-offs on high-friction forms. Redesigned the sequence from a chaotic multi-page maze to a streamlined, single-page accordion checkout with instant validation.</p>
+              
+              <div class="project-tech-stack">
+                <span class="tech-pill">UX Research</span>
+                <span class="tech-pill">Wireframing</span>
+                <span class="tech-pill">User Flow</span>
+                <span class="tech-pill">UI Design</span>
+                <span class="tech-pill">A/B Testing Concepts</span>
+              </div>
+
+              <div class="project-cta-group">
+                <button class="btn btn-primary open-case-study" data-target="modal-ux">
+                  <span>Explore Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- CSS RENDERED REAL MOCKUP: BEFORE vs AFTER -->
+            <div class="project-visual-wrapper">
+              <div class="redesign-comparison-box">
+                <!-- BEFORE Wireframe Section -->
+                <div class="before-wireframe">
+                  <div class="comparison-tag tag-before">BEFORE (High Friction)</div>
+                  <div class="wireframe-mock">
+                    <div class="wf-line title"></div>
+                    <div class="wf-box input"></div>
+                    <div class="wf-box input"></div>
+                    <div class="wf-box input"></div>
+                    <div class="wf-box btn-old"></div>
+                    <div class="wf-badge-error">Cluttered • 5 Steps</div>
+                  </div>
+                </div>
+
+                <div class="comparison-arrow">→</div>
+
+                <!-- AFTER Final UI Section -->
+                <div class="after-final-ui">
+                  <div class="comparison-tag tag-after">AFTER (Optimized Flow)</div>
+                  <div class="polished-ui-mock">
+                    <div class="checkout-step active">
+                      <span class="step-num">1</span>
+                      <span class="step-txt">Express One-Click Pay</span>
+                    </div>
+                    <div class="express-btn-group">
+                      <div class="e-btn">Apple Pay</div>
+                      <div class="e-btn">GPay</div>
+                    </div>
+                    <div class="checkout-step">
+                      <span class="step-num">2</span>
+                      <span class="step-txt">Shipping Address</span>
+                    </div>
+                    <div class="wf-badge-success">Clean • 1-Page Accordion</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DESIGN SYSTEM SECTION -->
+    <section id="design-system" class="section design-system-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">02 / FOUNDATIONS</span>
+          <h2 class="section-title">Design System & UI Components</h2>
+          <p class="section-desc">Proof of structured UI architecture, typography scales, color accessibility, and tokenized design systems.</p>
+        </div>
+
+        <div class="ds-display-grid">
+          <!-- Typography Hierarchy -->
+          <div class="ds-card ds-type">
+            <h4 class="ds-card-title">01 / Typography Scale</h4>
+            <div class="type-scale-list">
+              <div class="type-item">
+                <span class="type-label">H1 — Space Grotesk / 40px</span>
+                <span class="type-sample h1-sample">Header Example</span>
+              </div>
+              <div class="type-item">
+                <span class="type-label">H2 — Space Grotesk / 28px</span>
+                <span class="type-sample h2-sample">Section Heading</span>
+              </div>
+              <div class="type-item">
+                <span class="type-label">Body — Plus Jakarta Sans / 15px</span>
+                <span class="type-sample body-sample">Clean, readable body typography engineered for screen legibility.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Tokens -->
+          <div class="ds-card ds-colors">
+            <h4 class="ds-card-title">02 / Color Palette Tokens</h4>
+            <div class="color-palette-grid">
+              <div class="color-swatch-box">
+                <div class="swatch-color" style="background: #00E699;"></div>
+                <div class="swatch-info"><span class="c-name">Primary</span><span class="c-hex">#00E699</span></div>
+              </div>
+              <div class="color-swatch-box">
+                <div class="swatch-color" style="background: #0D1117;"></div>
+                <div class="swatch-info"><span class="c-name">Background</span><span class="c-hex">#0D1117</span></div>
+              </div>
+              <div class="color-swatch-box">
+                <div class="swatch-color" style="background: #161B22;"></div>
+                <div class="swatch-info"><span class="c-name">Surface</span><span class="c-hex">#161B22</span></div>
+              </div>
+              <div class="color-swatch-box">
+                <div class="swatch-color" style="background: #6C5CE7;"></div>
+                <div class="swatch-info"><span class="c-name">Accent</span><span class="c-hex">#6C5CE7</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Rendered Components -->
+          <div class="ds-card ds-components">
+            <h4 class="ds-card-title">03 / Component Library</h4>
+            <div class="components-demo-flex">
+              <div class="comp-group">
+                <span class="comp-label">Buttons</span>
+                <div class="comp-row">
+                  <button class="btn btn-primary btn-sm">Primary</button>
+                  <button class="btn btn-secondary btn-sm">Secondary</button>
+                </div>
+              </div>
+
+              <div class="comp-group">
+                <span class="comp-label">Badges & Statuses</span>
+                <div class="comp-row">
+                  <span class="ds-badge badge-active">Active</span>
+                  <span class="ds-badge badge-pending">Pending</span>
+                  <span class="ds-badge badge-accent">Beta</span>
+                </div>
+              </div>
+
+              <div class="comp-group">
+                <span class="comp-label">Form Inputs</span>
+                <div class="comp-row">
+                  <input type="text" class="ds-input" placeholder="Search components..." readonly value="Interactive Input" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spacing Tokens Scale -->
+          <div class="ds-card ds-spacing">
+            <h4 class="ds-card-title">04 / Spacing System (8pt Grid)</h4>
+            <div class="spacing-bars-container">
+              <div class="space-item"><div class="space-bar" style="width: 8px;"></div><span>8px</span></div>
+              <div class="space-item"><div class="space-bar" style="width: 16px;"></div><span>16px</span></div>
+              <div class="space-item"><div class="space-bar" style="width: 24px;"></div><span>24px</span></div>
+              <div class="space-item"><div class="space-bar" style="width: 32px;"></div><span>32px</span></div>
+              <div class="space-item"><div class="space-bar" style="width: 48px;"></div><span>48px</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UX PROCESS METHODOLOGY -->
+    <section id="process" class="section process-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">03 / METHODOLOGY</span>
+          <h2 class="section-title">Human-Centered UX Process</h2>
+          <p class="section-desc">A structured framework balancing user needs, technical constraints, and visual quality.</p>
+        </div>
+
+        <div class="process-pipeline">
+          <div class="process-step">
+            <div class="step-num-badge">01</div>
+            <h4>Discover</h4>
+            <p>Researching user pain points, gathering qualitative feedback, and competitive benchmarking.</p>
+            <div class="step-artifact">Research Brief</div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num-badge">02</div>
+            <h4>Define</h4>
+            <p>Synthesizing insights into core problem statements, user personas, and key flows.</p>
+            <div class="step-artifact">User Flow Diagram</div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num-badge">03</div>
+            <h4>Ideate</h4>
+            <p>Rapid sketching, exploring layout variations, and testing preliminary visual ideas.</p>
+            <div class="step-artifact">Low-Fi Sketches</div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num-badge">04</div>
+            <h4>Wireframe</h4>
+            <p>Structuring information architecture, content hierarchy, and interaction mechanics.</p>
+            <div class="step-artifact">Structural Layouts</div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num-badge">05</div>
+            <h4>Prototype</h4>
+            <p>Building high-fidelity interactive screens with realistic motion and micro-interactions.</p>
+            <div class="step-artifact">Figma & Web Mockups</div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num-badge">06</div>
+            <h4>Test & Iterate</h4>
+            <p>Validating accessibility, testing across breakpoints, and refining details based on feedback.</p>
+            <div class="step-artifact">Usability Adjustments</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI × DESIGN × DEVELOPMENT SECTION -->
+    <section id="ai-system" class="section ai-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">04 / WORKFLOW AUTOMATION</span>
+          <h2 class="section-title">AI × Design × Development</h2>
+          <p class="section-desc">How I leverage artificial intelligence as a force multiplier for rapid execution and analytical problem solving.</p>
+        </div>
+
+        <div class="ai-philosophy-banner">
+          <div class="quote-symbol">“</div>
+          <h3>AI accelerates the process. Human judgment defines the result.</h3>
+          <p>I don't rely on AI to generate generic designs. I use AI to automate code boilerplate, analyze complex user data, speed up ideation, and streamline component production.</p>
+        </div>
+
+        <!-- Interactive Node Graph Visual for AI -->
+        <div class="ai-node-system">
+          <div class="ai-center-node">
+            <span class="ai-core-label">AI ASSISTANT</span>
+            <span class="ai-pulse-ring"></span>
+          </div>
+
+          <div class="ai-branches-grid">
+            <div class="ai-branch-card" data-node="code">
+              <div class="branch-icon">💻</div>
+              <h5>Coding & Debugging</h5>
+              <p>Accelerating front-end syntax execution, testing edge cases, and writing clean CSS variables.</p>
+            </div>
+
+            <div class="ai-branch-card" data-node="research">
+              <div class="branch-icon">🔍</div>
+              <h5>Research & Synthesis</h5>
+              <p>Synthesizing large qualitative user feedback sets into actionable design metrics.</p>
+            </div>
+
+            <div class="ai-branch-card" data-node="ideation">
+              <div class="branch-icon">💡</div>
+              <h5>Rapid Ideation</h5>
+              <p>Generating alternative copy variations, microcopy messaging, and layout approaches.</p>
+            </div>
+
+            <div class="ai-branch-card" data-node="workflow">
+              <div class="branch-icon">⚡</div>
+              <h5>Workflow Automation</h5>
+              <p>Automating redundant design file organization, asset exports, and repetitive tasks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-main-text">
+            <span class="section-num">05 / PERSPECTIVE</span>
+            <h2 class="about-headline">I like solving problems at the intersection of design and technology.</h2>
+            <p class="about-paragraph">
+              I am pursuing a B.Tech in Civil Engineering at BMS College of Engineering while independently building skills in UI/UX design, web development, and AI-driven workflows.
+            </p>
+            <p class="about-paragraph">
+              My engineering background provides me with a strong foundation in structural thinking, system analysis, and methodical problem-solving. I apply these principles directly to digital product design: ensuring that every interface is built on a solid architectural foundation.
+            </p>
+          </div>
+
+          <div class="about-highlights-card">
+            <h4>Core Strengths</h4>
+            <ul class="highlights-list">
+              <li>
+                <strong>Design Thinking:</strong> User empathy, visual hierarchy, and intuitive information architecture.
+              </li>
+              <li>
+                <strong>Front-End Code:</strong> Turning design files into responsive, accessible HTML/CSS/JS.
+              </li>
+              <li>
+                <strong>AI Integration:</strong> Leveraging modern AI tooling to increase productivity.
+              </li>
+              <li>
+                <strong>Analytical Rigor:</strong> Engineering-mindset applied to interface systems.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKILLS CATEGORIES -->
+        <div class="skills-block">
+          <h3 class="skills-title">Verified Skillset</h3>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h5>Design</h5>
+              <ul>
+                <li>UI Design</li>
+                <li>UX Design</li>
+                <li>Wireframing</li>
+                <li>Prototyping</li>
+                <li>Design Systems</li>
+                <li>Responsive Layouts</li>
+                <li>Accessibility (WCAG)</li>
+                <li>Visual Hierarchy</li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h5>Development</h5>
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3 / Grid & Flexbox</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Python</li>
+                <li>Git / GitHub</li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h5>AI & Tools</h5>
+              <ul>
+                <li>AI-Assisted Development</li>
+                <li>AI Research Workflows</li>
+                <li>Prompt Engineering</li>
+                <li>AI/ML Fundamentals</li>
+                <li>Figma</li>
+                <li>Canva</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME SECTION -->
+    <section id="resume" class="section resume-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">06 / BACKGROUND</span>
+          <h2 class="section-title">Resume & Background</h2>
+          <p class="section-desc">Verified education, certifications, and active learning paths.</p>
+        </div>
+
+        <div class="resume-card-container">
+          <div class="resume-card">
+            <div class="resume-header">
+              <div>
+                <h3 class="resume-name">Vaishnavi Shekar</h3>
+                <p class="resume-tagline">UI/UX Designer • Web Designer • AI-Powered Developer</p>
+              </div>
+              <a href="#" class="btn btn-secondary btn-sm" onclick="alert('Resume download link triggered.'); return false;">Download PDF</a>
+            </div>
+
+            <div class="resume-body">
+              <div class="resume-column">
+                <h4 class="resume-sub">Education</h4>
+                <div class="timeline-item">
+                  <span class="timeline-date">2026 – 2030</span>
+                  <h5>BMS College of Engineering</h5>
+                  <p class="timeline-desc">B.Tech in Civil Engineering (Developing cross-disciplinary design & CS skills)</p>
+                </div>
+              </div>
+
+              <div class="resume-column">
+                <h4 class="resume-sub">Verified Learning & Certifications</h4>
+                <ul class="cert-list">
+                  <li>
+                    <span class="cert-title">Anthropic AI Fluency</span>
+                    <span class="cert-status">Verified</span>
+                  </li>
+                  <li>
+                    <span class="cert-title">Microsoft AI/ML Fundamentals</span>
+                    <span class="cert-status">Verified</span>
+                  </li>
+                  <li>
+                    <span class="cert-title">Harvard CS50x</span>
+                    <span class="cert-status in-prog">In Progress</span>
+                  </li>
+                  <li>
+                    <span class="cert-title">Python Programming</span>
+                    <span class="cert-status active">Active Skill Building</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-box">
+          <span class="contact-kicker">GET IN TOUCH</span>
+          <h2 class="contact-headline">Let's build something useful.</h2>
+          <p class="contact-desc">Open for UI/UX opportunities, design system projects, and front-end design roles.</p>
+          
+          <div class="contact-links">
+            <a href="mailto:vaishnavi.shekar@example.com" class="contact-btn">
+              <i>✉️</i> Email Me
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-btn">
+              <i>🔗</i> LinkedIn
+            </a>
+            <a href="https://github.com/vaishnavi-shekar" target="_blank" rel="noopener" class="contact-btn">
+              <i>💻</i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <p>© 2026 Vaishnavi Shekar. Designed & Built with Code + AI.</p>
+      <a href="#" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY MODALS -->
+  
+  <!-- MODAL 01: AURA -->
+  <div id="modal-aura" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <span class="project-tag">CASE STUDY</span>
+        <h2>AURA — Fine Dining UX & Implementation</h2>
+      </div>
+      <div class="modal-body">
+        <section class="cs-section">
+          <h4>01 / Overview</h4>
+          <p>AURA is a luxury restaurant concept focused on creating a digital experience that mirrors the atmosphere of high-end dining. The project addresses common restaurant site friction: buried menus, difficult reservation paths, and uninspired mobile UI.</p>
+        </section>
+
+        <section class="cs-section">
+          <h4>02 / The Problem</h4>
+          <p>Most restaurant websites suffer from heavy PDF menus, unoptimized mobile interfaces, and broken third-party booking embeds that cause drop-offs.</p>
+        </section>
+
+        <section class="cs-section">
+          <h4>03 / Wireframes & Flow</h4>
+          <div class="modal-visual-placeholder">
+            <div class="modal-mock-wf">
+              [ Wireframe Flow: Landing Page → Filterable Menu → Modal Reservation ]
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h4>04 / Final Implementation</h4>
+          <p>Built with lightweight HTML5, CSS Grid for responsive menu cards, and clean JavaScript for instant booking date selections.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 02: PULSE -->
+  <div id="modal-pulse" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <span class="project-tag">CASE STUDY</span>
+        <h2>PULSE — AI SaaS Analytics Dashboard</h2>
+      </div>
+      <div class="modal-body">
+        <section class="cs-section">
+          <h4>01 / Overview</h4>
+          <p>PULSE provides engineering teams with real-time insight into AI model latency, token throughput, and API health. Designed with dark-mode aesthetic for reduced eye strain during monitoring.</p>
+        </section>
+
+        <section class="cs-section">
+          <h4>02 / Design System & Accessibility</h4>
+          <p>Adheres strictly to WCAG 2.1 AA contrast ratios for charts, data metrics, and status badges. Includes dark neutral surface tokens and vivid status accents.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 03: UX REDESIGN -->
+  <div id="modal-ux" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <span class="project-tag">CASE STUDY</span>
+        <h2>E-Commerce Checkout Friction Redesign</h2>
+      </div>
+      <div class="modal-body">
+        <section class="cs-section">
+          <h4>01 / Overview</h4>
+          <p>A comprehensive study on reducing checkout form friction. Replaced multi-step traditional inputs with an accordion flow and inline validation, reducing cognitive load.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
