@@ -1,108 +1,148 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-  /* ==========================================================================
-     MOBILE NAVIGATION TOGGLE
-     ========================================================================== */
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navLinks = document.querySelector('.nav-links');
+/* ==========================================================================
+   VAISHNAVI SHEKAR - PORTFOLIO INTERACTION ENGINE
+   Smooth reveals, tabs switcher, interactive workflow, and accessible modals
+   ========================================================================== */
 
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      const isVisible = navLinks.style.display === 'flex';
-      navLinks.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '70px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#0A0D12';
-        navLinks.style.padding = '20px';
-        navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* --- 1. SCROLL REVEAL ANIMATIONS (IntersectionObserver) --- */
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
       }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+
+  /* --- 2. MOBILE NAVIGATION TOGGLE --- */
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('mobile-open');
+    });
+
+    // Close menu when clicking link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
-  /* ==========================================================================
-     CASE STUDY MODAL CONTROLLER
-     ========================================================================== */
-  const openModalBtns = document.querySelectorAll('.open-case-study');
-  const closeModalBtns = document.querySelectorAll('.modal-close');
-  const modals = document.querySelectorAll('.modal-overlay');
 
-  openModalBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const targetModal = document.getElementById(targetId);
+  /* --- 3. DESIGN SYSTEM INTERACTIVE TABS --- */
+  const dsTabs = document.querySelectorAll('.ds-tab');
+  const dsPanels = document.querySelectorAll('.ds-panel');
+
+  dsTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetPanelId = tab.getAttribute('data-tab');
+
+      // Update Tab active states
+      dsTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Update Panel visibility
+      dsPanels.forEach(panel => {
+        if (panel.id === targetPanelId) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+
+
+  /* --- 4. AI WORKFLOW INTERACTIVE NODES --- */
+  const wfNodes = document.querySelectorAll('.wf-node');
+  const detailDisplay = document.getElementById('node-detail-display');
+
+  wfNodes.forEach(node => {
+    const handleHover = () => {
+      wfNodes.forEach(n => n.classList.remove('highlight'));
+      node.classList.add('highlight');
+      const infoText = node.getAttribute('data-info');
+      if (detailDisplay && infoText) {
+        detailDisplay.textContent = infoText;
+      }
+    };
+
+    node.addEventListener('mouseenter', handleHover);
+    node.addEventListener('click', handleHover);
+  });
+
+
+  /* --- 5. CASE STUDY MODAL ENGINE --- */
+  const modalTriggers = document.querySelectorAll('.modal-trigger');
+  const modals = document.querySelectorAll('.modal');
+
+  modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const modalId = trigger.getAttribute('data-modal');
+      const targetModal = document.getElementById(modalId);
+
       if (targetModal) {
         targetModal.classList.add('active');
+        targetModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
       }
     });
   });
 
-  closeModalBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.closest('.modal-overlay').classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-  });
-
-  // Close modal when clicking outside content box
+  // Close Modal handlers
   modals.forEach(modal => {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
+    const closeElements = modal.querySelectorAll('[data-close]');
+
+    closeElements.forEach(el => {
+      el.addEventListener('click', () => {
         modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
     });
   });
 
-  /* ==========================================================================
-     HERO STAGE MOUSE PARALLAX / MICRO-INTERACTION
-     ========================================================================== */
-  const heroStage = document.querySelector('.hero-visual-stage');
-  const heroCards = document.querySelectorAll('.hero-card');
-
-  if (heroStage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    heroStage.addEventListener('mousemove', (e) => {
-      const rect = heroStage.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      heroCards.forEach((card) => {
-        const speed = card.getAttribute('data-speed') || 0.03;
-        card.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+  // Escape key listener for modals
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      modals.forEach(modal => {
+        if (modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
       });
-    });
+    }
+  });
 
-    heroStage.addEventListener('mouseleave', () => {
-      heroCards.forEach((card) => {
-        card.style.transform = `translate(0px, 0px)`;
-      });
-    });
-  }
 
-  /* ==========================================================================
-     INTERACTIVE AI NODE HIGHLIGHTS
-     ========================================================================== */
-  const aiBranchCards = document.querySelectorAll('.ai-branch-card');
-  const aiCenterNode = document.querySelector('.ai-center-node');
+  /* --- 6. NAVBAR SCROLL BACKGROUND ELEVATION --- */
+  const navbar = document.getElementById('navbar');
 
-  aiBranchCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      if (aiCenterNode) {
-        aiCenterNode.style.boxShadow = '0 0 25px #00E699';
-        aiCenterNode.style.transform = 'scale(1.05)';
-      }
-    });
-
-    card.addEventListener('mouseleave', () => {
-      if (aiCenterNode) {
-        aiCenterNode.style.boxShadow = 'none';
-        aiCenterNode.style.transform = 'scale(1)';
-      }
-    });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+    } else {
+      navbar.style.boxShadow = 'none';
+    }
   });
 
 });
