@@ -5,730 +5,512 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaishnavi Shekar — UI/UX Designer & AI-Powered Developer</title>
     <meta name="description" content="Portfolio of Vaishnavi Shekar — Aspiring UI/UX Designer, Web Designer, and AI-powered Developer based in Bengaluru.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-surface-0 text-content-main font-sans antialiased selection:bg-accent-primary selection:text-white">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN for instant robust utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#09090B',
+                            card: '#18181B',
+                            cardHover: '#27272A',
+                            border: '#27272A',
+                            accent: '#6366F1',
+                            accentHover: '#4F46E5',
+                            muted: '#A1A1AA',
+                            emerald: '#10B981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-surface-0/80 backdrop-blur-md border-b border-surface-border transition-all duration-300" id="navbar">
+    <!-- Custom Deep Aesthetics CSS -->
+    <style>
+        body {
+            background-color: #09090B;
+            color: #F4F4F5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Subtle Geometric Background Grid */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Gradient Text Accent */
+        .text-glow {
+            background: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 50%, #6366F1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Card Hover Animation */
+        .card-studio {
+            background-color: #18181B;
+            border: 1px solid #27272A;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-studio:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+        }
+
+        /* Custom Button Styling */
+        .btn-glow {
+            background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            transition: all 0.2s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .wf-step-btn.active {
+            background-color: #6366F1;
+            color: #FFFFFF;
+            border-color: #6366F1;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-zinc-100 antialiased bg-grid selection:bg-indigo-500 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-xl border-b border-brand-border">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#hero" class="group flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-accent-primary/10 border border-accent-primary/30 flex items-center justify-center font-bold text-accent-primary group-hover:scale-105 transition-transform">VS</div>
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center font-extrabold text-indigo-400 group-hover:scale-105 transition-transform">
+                    VS
+                </div>
                 <div class="flex flex-col">
-                    <span class="font-bold text-base tracking-tight text-content-main">Vaishnavi Shekar</span>
-                    <span class="text-xs text-content-muted">Designer & Developer</span>
+                    <span class="font-bold text-sm text-white tracking-tight">Vaishnavi Shekar</span>
+                    <span class="text-xs text-brand-muted">UI/UX • Code • AI</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#ai-workflow" class="nav-link">AI Workflow</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#design-system" class="nav-link">Design System</a>
-                <a href="#resume" class="nav-link">Resume</a>
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-muted">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#ai-workflow" class="hover:text-white transition-colors">AI Workflow</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#design-system" class="hover:text-white transition-colors">Design System</a>
+                <a href="#resume" class="hover:text-white transition-colors">Resume</a>
             </nav>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="#contact" class="btn-secondary">Let's Connect</a>
-                <a href="#projects" class="btn-primary">View Work</a>
-            </div>
-
-            <!-- Mobile Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden text-content-main p-2 focus:outline-none" aria-label="Toggle Navigation Menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-surface-border bg-surface-1 px-6 py-6 flex flex-col gap-4">
-            <a href="#about" class="mobile-nav-link">About</a>
-            <a href="#ai-workflow" class="mobile-nav-link">AI Workflow</a>
-            <a href="#projects" class="mobile-nav-link">Projects</a>
-            <a href="#skills" class="mobile-nav-link">Skills</a>
-            <a href="#design-system" class="mobile-nav-link">Design System</a>
-            <a href="#resume" class="mobile-nav-link">Resume</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
-            <div class="pt-4 border-t border-surface-border flex flex-col gap-3">
-                <a href="#projects" class="btn-primary text-center">View Work</a>
+                <a href="#contact" class="px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-800 border border-zinc-700 text-white hover:bg-zinc-700 transition-all">Let's Connect</a>
+                <a href="#projects" class="btn-glow px-4 py-2 text-xs font-semibold rounded-lg text-white">View Work</a>
             </div>
         </div>
     </header>
 
     <main class="pt-20">
         <!-- HERO SECTION -->
-        <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center justify-center relative overflow-hidden py-20 px-6">
-            <div class="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
-            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-accent-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
-            <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent-secondary/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <section id="hero" class="min-h-[85vh] flex items-center justify-center relative px-6 py-20 overflow-hidden">
+            <!-- Glowing Glow Effects -->
+            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px] pointer-events-none"></div>
 
-            <div class="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-2 border border-surface-border text-xs md:text-sm font-medium text-content-muted animate-fade-in">
+            <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-400">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span>Incoming B.Tech Civil Engineering @ BMSCE • Open for Web & UI/UX Roles</span>
                 </div>
 
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-content-main leading-[1.1]">
-                    Designing intelligent digital experiences. <br class="hidden sm:inline">
-                    <span class="text-gradient">Building them with code & AI.</span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] text-glow">
+                    Designing intelligent digital experiences. <br class="hidden sm:block">
+                    Building them with code & AI.
                 </h1>
 
-                <p class="max-w-2xl mx-auto text-base md:text-xl text-content-muted leading-relaxed font-normal">
-                    I blend structured engineering logic, user-centric interface design, modern front-end code, and AI workflows to create performant, accessible digital products.
+                <p class="max-w-2xl mx-auto text-base sm:text-lg text-brand-muted font-normal leading-relaxed">
+                    I blend structured engineering logic, user-centric interface design, modern front-end code, and AI workflows to build performant, accessible web products.
                 </p>
 
-                <!-- Dynamic Hero Badge Matrix -->
+                <!-- Hero Badges -->
                 <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-                    <span class="pill-tag"><span class="text-accent-primary">01</span> UI/UX Design</span>
-                    <span class="pill-tag"><span class="text-accent-primary">02</span> Front-End Code</span>
-                    <span class="pill-tag"><span class="text-accent-primary">03</span> AI Workflows</span>
-                    <span class="pill-tag"><span class="text-accent-primary">04</span> Engineering Systems</span>
+                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">01</span> UI/UX Design</span>
+                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">02</span> Front-End Code</span>
+                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">03</span> AI Workflows</span>
+                    <span class="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"><span class="text-indigo-400 font-bold">04</span> System Design</span>
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="#projects" class="btn-primary w-full sm:w-auto text-center">
-                        <span>View My Work</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </a>
-                    <a href="#resume" class="btn-secondary w-full sm:w-auto text-center">
-                        <svg class="w-4 h-4 text-content-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 2 0 01-2-2V5a2 2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 2 0 01-2 2z"></path></svg>
-                        <span>View Resume</span>
-                    </a>
-                    <a href="#contact" class="btn-ghost w-full sm:w-auto text-center">Let's Connect &rarr;</a>
+                    <a href="#projects" class="btn-glow w-full sm:w-auto px-8 py-3.5 text-sm font-semibold rounded-xl text-white">View My Work &rarr;</a>
+                    <a href="#resume" class="w-full sm:w-auto px-8 py-3.5 text-sm font-semibold rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 hover:bg-zinc-800 transition-colors">View Resume</a>
+                    <a href="#contact" class="w-full sm:w-auto px-6 py-3.5 text-sm font-semibold text-brand-muted hover:text-white transition-colors">Let's Connect</a>
                 </div>
             </div>
         </section>
 
-        <hr class="border-surface-border max-w-7xl mx-auto">
-
-        <!-- ABOUT / HOW I THINK -->
-        <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <div class="lg:col-span-5 space-y-4 sticky top-28">
-                    <div class="section-label">01 // PHILOSOPHY & MINDSET</div>
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-content-main">Engineering structure meets digital craftsmanship.</h2>
-                    <p class="text-content-muted leading-relaxed">
-                        My background in engineering provides me with a rigorous, systematic mindset. I don't treat design as superficial polish; I view it as structured problem-solving.
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">01 // PHILOSOPHY</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Engineering discipline meets interface craft.</h2>
+                    <p class="text-brand-muted text-sm leading-relaxed">
+                        My civil engineering background provides a structured approach to problem solving. I view UI/UX design not as superficial decoration, but as blueprinting functional digital systems.
                     </p>
                 </div>
 
-                <div class="lg:col-span-7 space-y-8">
-                    <div class="card p-8 space-y-6">
-                        <h3 class="text-xl font-bold text-content-main">How I Approach Digital Products</h3>
-                        <p class="text-content-muted leading-relaxed">
-                            "I don't just want to make websites look visually attractive. I want to deeply understand user intent, decompose complex problems, architect accessible UI systems, and understand exactly how that experience translates into clean, maintainable front-end code."
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <div class="p-4 rounded-xl bg-surface-2 border border-surface-border">
-                                <span class="font-mono text-xs text-accent-primary block mb-1">01. DESIGN THINKING</span>
-                                <h4 class="font-semibold text-content-main">User-Centered & Structured</h4>
-                                <p class="text-xs text-content-muted mt-1">Starting with intent, accessibility, clear information architecture, and robust design systems.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-surface-2 border border-surface-border">
-                                <span class="font-mono text-xs text-accent-primary block mb-1">02. FRONT-END CODE</span>
-                                <h4 class="font-semibold text-content-main">Semantic & Responsive</h4>
-                                <p class="text-xs text-content-muted mt-1">Translating Figma designs into pixel-perfect, accessible HTML, CSS, and modular JavaScript.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-surface-2 border border-surface-border">
-                                <span class="font-mono text-xs text-accent-primary block mb-1">03. AI INTEGRATION</span>
-                                <h4 class="font-semibold text-content-main">Accelerated Workflows</h4>
-                                <p class="text-xs text-content-muted mt-1">Leveraging state-of-the-art AI tools for rapid wireframing, code prototyping, and research.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-surface-2 border border-surface-border">
-                                <span class="font-mono text-xs text-accent-primary block mb-1">04. PROBLEM SOLVING</span>
-                                <h4 class="font-semibold text-content-main">Analytical Rigor</h4>
-                                <p class="text-xs text-content-muted mt-1">Applying structural engineering discipline to software components and layout mechanics.</p>
-                            </div>
+                <div class="lg:col-span-7 card-studio p-8 rounded-2xl space-y-6">
+                    <h3 class="text-xl font-bold text-white">How I Approach Product Creation</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">
+                        "I don't just want to make websites look visually attractive. I want to deeply understand user intent, decompose complex requirements, architect accessible component systems, and write clean front-end code."
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
+                            <span class="font-mono text-xs text-indigo-400 block mb-1">01. DESIGN THINKING</span>
+                            <h4 class="font-semibold text-white text-sm">User-Centered & Structured</h4>
+                            <p class="text-xs text-brand-muted mt-1">Starting with clear intent, layout hierarchy, and responsive Figma components.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
+                            <span class="font-mono text-xs text-indigo-400 block mb-1">02. FRONT-END CODE</span>
+                            <h4 class="font-semibold text-white text-sm">Semantic & Accessible</h4>
+                            <p class="text-xs text-brand-muted mt-1">Translating mockups into production-ready HTML, CSS, and modular JS.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
+                            <span class="font-mono text-xs text-indigo-400 block mb-1">03. AI ACCELERATION</span>
+                            <h4 class="font-semibold text-white text-sm">Intelligent Workflows</h4>
+                            <p class="text-xs text-brand-muted mt-1">Leveraging AI to accelerate prototyping, code auditing, and research.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
+                            <span class="font-mono text-xs text-indigo-400 block mb-1">04. PROBLEM SOLVING</span>
+                            <h4 class="font-semibold text-white text-sm">Systematic Rigor</h4>
+                            <p class="text-xs text-brand-muted mt-1">Applying engineering breakdown methods to web layout physics.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-surface-border max-w-7xl mx-auto">
-
-        <!-- AI SECTION — AI x DESIGN x DEVELOPMENT -->
-        <section id="ai-workflow" class="py-24 px-6 max-w-7xl mx-auto">
-            <div class="space-y-4 text-center max-w-3xl mx-auto mb-16">
-                <div class="section-label">02 // THE MODERN DESIGNER'S TOOLKIT</div>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-content-main">AI × Design × Development</h2>
-                <p class="text-content-muted text-base md:text-lg">
-                    AI isn't a replacement for human taste or design judgment—it is a force multiplier for research, rapid iteration, and production velocity.
+        <!-- AI SECTION -->
+        <section id="ai-workflow" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">02 // MODERN DESIGNER TOOLKIT</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">AI × Design × Development</h2>
+                <p class="text-brand-muted text-sm sm:text-base">
+                    AI is a force multiplier for rapid iteration, research synthesis, and prototyping speed.
                 </p>
             </div>
 
-            <!-- Interactive AI Capabilities Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                <div class="card p-8 space-y-4 hover:border-accent-primary/50 transition-colors">
-                    <div class="flex items-center justify-between">
-                        <span class="font-mono text-sm text-accent-primary font-bold">01 — AI-Assisted Development</span>
-                        <div class="w-8 h-8 rounded-lg bg-surface-2 flex items-center justify-center text-xs font-mono">CODE</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-content-main">Accelerated Coding & Prototyping</h3>
-                    <p class="text-content-muted text-sm leading-relaxed">
-                        Using models like Claude and ChatGPT to rapidly scaffold HTML/CSS structures, debug complex layout math, draft boilerplate scripts, and stress-test code logic.
-                    </p>
+            <!-- Visual Workflow Stepper -->
+            <div class="card-studio p-8 rounded-2xl space-y-8">
+                <h3 class="text-xl font-bold text-white text-center">Interactive Human + AI Workflow Pipeline</h3>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2" id="wf-buttons">
+                    <button onclick="setWfStep(1)" class="wf-step-btn active px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">1. Problem</button>
+                    <button onclick="setWfStep(2)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">2. Research</button>
+                    <button onclick="setWfStep(3)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">3. AI Explore</button>
+                    <button onclick="setWfStep(4)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">4. Decisions</button>
+                    <button onclick="setWfStep(5)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">5. Prototype</button>
+                    <button onclick="setWfStep(6)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">6. Build</button>
+                    <button onclick="setWfStep(7)" class="wf-step-btn px-3 py-2 text-xs font-mono rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300">7. Iterate</button>
                 </div>
 
-                <div class="card p-8 space-y-4 hover:border-accent-primary/50 transition-colors">
+                <div class="p-6 rounded-xl bg-zinc-900/90 border border-zinc-800 space-y-3">
                     <div class="flex items-center justify-between">
-                        <span class="font-mono text-sm text-accent-primary font-bold">02 — Design Exploration</span>
-                        <div class="w-8 h-8 rounded-lg bg-surface-2 flex items-center justify-center text-xs font-mono">UI</div>
+                        <span id="wf-step-label" class="text-xs font-mono font-bold text-indigo-400">STAGE 01 OF 07</span>
+                        <span id="wf-owner-label" class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 font-medium border border-indigo-500/20">Human Led</span>
                     </div>
-                    <h3 class="text-xl font-bold text-content-main">Rapid Ideation & Moodboarding</h3>
-                    <p class="text-content-muted text-sm leading-relaxed">
-                        Generating color palette options, typography pairings, layout variations, and component state ideas before committing to high-fidelity Figma components.
-                    </p>
-                </div>
-
-                <div class="card p-8 space-y-4 hover:border-accent-primary/50 transition-colors">
-                    <div class="flex items-center justify-between">
-                        <span class="font-mono text-sm text-accent-primary font-bold">03 — Research & Synthesis</span>
-                        <div class="w-8 h-8 rounded-lg bg-surface-2 flex items-center justify-center text-xs font-mono">UX</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-content-main">Information Architecture & Insights</h3>
-                    <p class="text-content-muted text-sm leading-relaxed">
-                        Utilizing Perplexity and Anthropic models to aggregate industry standards, draft user flow matrices, write microcopy options, and structure complex product trees.
-                    </p>
-                </div>
-
-                <div class="card p-8 space-y-4 hover:border-accent-primary/50 transition-colors">
-                    <div class="flex items-center justify-between">
-                        <span class="font-mono text-sm text-accent-primary font-bold">04 — Human + AI Workflow</span>
-                        <div class="w-8 h-8 rounded-lg bg-surface-2 flex items-center justify-center text-xs font-mono">HYBRID</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-content-main">Strategic Oversight & Refinement</h3>
-                    <p class="text-content-muted text-sm leading-relaxed">
-                        AI provides speed and expansive ideas; human taste, empathy, accessibility auditing, and brand alignment direct the final outcome.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Visual Interactive AI Workflow Pipeline -->
-            <div class="card p-8 md:p-12 space-y-8 bg-surface-1">
-                <h3 class="text-2xl font-bold text-content-main text-center">Interactive Workflow Pipeline</h3>
-                <p class="text-center text-content-muted text-sm max-w-2xl mx-auto">
-                    Click through the stages below to explore how human critical thinking combines with AI acceleration at every phase of product execution.
-                </p>
-
-                <!-- Workflow Stage Selectors -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2" id="workflow-selector">
-                    <button class="wf-btn active" data-step="1">1. Problem</button>
-                    <button class="wf-btn" data-step="2">2. Research</button>
-                    <button class="wf-btn" data-step="3">3. AI Exploration</button>
-                    <button class="wf-btn" data-step="4">4. Human Decisions</button>
-                    <button class="wf-btn" data-step="5">5. Prototype</button>
-                    <button class="wf-btn" data-step="6">6. Build</button>
-                    <button class="wf-btn" data-step="7">7. Test & Iterate</button>
-                </div>
-
-                <!-- Workflow Detail Display Box -->
-                <div id="workflow-display" class="p-6 rounded-xl bg-surface-2 border border-surface-border space-y-3 transition-all duration-300">
-                    <div class="flex items-center justify-between">
-                        <span id="wf-step-num" class="font-mono text-xs text-accent-primary font-bold">STAGE 01 OF 07</span>
-                        <span id="wf-owner" class="text-xs px-2.5 py-1 rounded-full bg-accent-primary/10 text-accent-primary font-medium">Human Led</span>
-                    </div>
-                    <h4 id="wf-title" class="text-xl font-bold text-content-main">Problem Definition & Objective Setting</h4>
-                    <p id="wf-desc" class="text-content-muted text-sm leading-relaxed">
-                        Defining the core target user persona, real business constraints, key success metrics, and technical requirements before touching any tools.
+                    <h4 id="wf-title" class="text-lg font-bold text-white">Problem Definition & Requirement Mapping</h4>
+                    <p id="wf-desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                        Synthesizing target user intent, structural constraints, and performance metrics before initiating automated tools.
                     </p>
                 </div>
             </div>
         </section>
 
-        <hr class="border-surface-border max-w-7xl mx-auto">
-
-        <!-- FLAGSHIP PROJECTS SECTION -->
-        <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
             <div class="space-y-4 mb-16">
-                <div class="section-label">03 // SELECTED CASE STUDIES</div>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-content-main">Featured Projects</h2>
-                <p class="text-content-muted text-base md:text-lg max-w-2xl">
-                    Detailed end-to-end UX/UI and web design case studies demonstrating complete problem decomposition, Figma wireframing, and responsive front-end implementation.
+                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">03 // SELECTED CASE STUDIES</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Flagship Projects</h2>
+                <p class="text-brand-muted text-sm sm:text-base max-w-2xl">
+                    End-to-end UX/UI and web design concepts demonstrating problem solving, Figma prototyping, and front-end execution.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 gap-12">
-                
-                <!-- PROJECT 01 -->
-                <article class="card overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-                    <div class="lg:col-span-7 bg-surface-2 p-8 md:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-surface-border">
+                <!-- Project 01 -->
+                <div class="card-studio rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-7 p-8 sm:p-12 space-y-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-brand-border">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between flex-wrap gap-2">
-                                <span class="badge">Concept Project</span>
-                                <span class="font-mono text-xs text-content-muted">UX / UI / Web Design / Code</span>
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">Self-Initiated Concept</span>
+                                <span class="font-mono text-xs text-brand-muted">UX / UI / Web Design</span>
                             </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-content-main group-hover:text-accent-primary transition-colors">
-                                AURA — Premium Culinary Experience Platform
-                            </h3>
-                            <p class="text-content-muted text-sm leading-relaxed">
-                                A high-end dining website concept focusing on seamless online reservations, immersive visual storytelling, interactive menu navigation, and WCAG AA accessibility standard compliance.
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">AURA — Premium Dining & Reservation Web Platform</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">
+                                A high-end culinary experience platform featuring smooth dynamic reservation scheduling, interactive digital menus, and WCAG AA accessible contrast design.
                             </p>
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="tag">Figma</span>
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS Grid</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">UX Research</span>
+                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Figma</span>
+                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">HTML5 / CSS Grid</span>
+                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">JavaScript</span>
                             </div>
                         </div>
-                        <div class="pt-8 flex items-center gap-4">
-                            <button onclick="openCaseStudy('aura')" class="btn-primary text-sm">
-                                Explore Case Study &rarr;
-                            </button>
-                        </div>
+                        <button onclick="openModal('aura')" class="btn-glow px-6 py-3 text-xs font-semibold rounded-xl text-white w-fit">
+                            Explore Case Study &rarr;
+                        </button>
                     </div>
-                    <div class="lg:col-span-5 bg-surface-3 p-8 flex items-center justify-center relative min-h-[300px]">
-                        <div class="w-full h-full rounded-lg bg-surface-1 border border-surface-border p-4 shadow-2xl flex flex-col gap-3 group-hover:scale-[1.02] transition-transform duration-300">
-                            <div class="flex items-center gap-2 border-b border-surface-border pb-3">
-                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                                <span class="text-xs text-content-muted font-mono ml-auto">aura-culinary.concept</span>
+                    <div class="lg:col-span-5 bg-zinc-900 p-8 flex items-center justify-center min-h-[260px]">
+                        <div class="w-full h-full rounded-xl bg-zinc-950 border border-zinc-800 p-4 space-y-3">
+                            <div class="flex gap-1.5 border-b border-zinc-800 pb-2">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                             </div>
-                            <div class="space-y-2 py-4">
-                                <div class="h-4 bg-surface-2 rounded w-3/4"></div>
-                                <div class="h-3 bg-surface-2 rounded w-1/2"></div>
-                                <div class="h-24 bg-surface-2 rounded w-full mt-4 flex items-center justify-center text-xs text-content-muted font-mono">
-                                    [ Interactive Figma Mockup Viewport ]
-                                </div>
+                            <div class="h-28 bg-zinc-900 rounded flex items-center justify-center text-xs font-mono text-brand-muted">
+                                [ Figma Interactive Mockup Viewport ]
                             </div>
                         </div>
                     </div>
-                </article>
+                </div>
 
-                <!-- PROJECT 02 -->
-                <article class="card overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-                    <div class="lg:col-span-7 bg-surface-2 p-8 md:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-surface-border">
+                <!-- Project 02 -->
+                <div class="card-studio rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-7 p-8 sm:p-12 space-y-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-brand-border">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between flex-wrap gap-2">
-                                <span class="badge">Concept Project</span>
-                                <span class="font-mono text-xs text-content-muted">SaaS / Product Design / AI UI</span>
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">Self-Initiated Concept</span>
+                                <span class="font-mono text-xs text-brand-muted">SaaS / Product Design</span>
                             </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-content-main group-hover:text-accent-primary transition-colors">
-                                PULSE AI — Project Intelligence & Workspace Dashboard
-                            </h3>
-                            <p class="text-content-muted text-sm leading-relaxed">
-                                An intelligent SaaS platform interface designed for engineering and design teams to synthesize cross-project telemetry, AI-generated action items, and task priorities in real-time.
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">PULSE AI — Workspace Dashboard & Telemetry</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">
+                                An analytics interface designed to synthesize cross-project priorities, task health metrics, and automated workspace insights with zero visual clutter.
                             </p>
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="tag">Design Systems</span>
-                                <span class="tag">Figma Prototypes</span>
-                                <span class="tag">Dashboard UI</span>
-                                <span class="tag">Data Vis</span>
+                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Design Systems</span>
+                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Dashboard UI</span>
+                                <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-brand-muted">Data Vis</span>
                             </div>
                         </div>
-                        <div class="pt-8 flex items-center gap-4">
-                            <button onclick="openCaseStudy('pulse')" class="btn-primary text-sm">
-                                Explore Case Study &rarr;
-                            </button>
-                        </div>
+                        <button onclick="openModal('pulse')" class="btn-glow px-6 py-3 text-xs font-semibold rounded-xl text-white w-fit">
+                            Explore Case Study &rarr;
+                        </button>
                     </div>
-                    <div class="lg:col-span-5 bg-surface-3 p-8 flex items-center justify-center relative min-h-[300px]">
-                        <div class="w-full h-full rounded-lg bg-surface-1 border border-surface-border p-4 shadow-2xl flex flex-col gap-3 group-hover:scale-[1.02] transition-transform duration-300">
-                            <div class="flex items-center gap-2 border-b border-surface-border pb-3">
-                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                                <span class="text-xs text-content-muted font-mono ml-auto">pulse-ai.dashboard</span>
+                    <div class="lg:col-span-5 bg-zinc-900 p-8 flex items-center justify-center min-h-[260px]">
+                        <div class="w-full h-full rounded-xl bg-zinc-950 border border-zinc-800 p-4 space-y-3">
+                            <div class="flex gap-1.5 border-b border-zinc-800 pb-2">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                             </div>
-                            <div class="grid grid-cols-2 gap-2 py-2">
-                                <div class="h-16 bg-surface-2 rounded p-2">
-                                    <div class="h-2 w-8 bg-accent-primary/40 rounded"></div>
-                                </div>
-                                <div class="h-16 bg-surface-2 rounded p-2">
-                                    <div class="h-2 w-8 bg-emerald-500/40 rounded"></div>
-                                </div>
-                            </div>
-                            <div class="h-16 bg-surface-2 rounded w-full flex items-center justify-center text-xs text-content-muted font-mono">
-                                [ Data Visualization System ]
+                            <div class="h-28 bg-zinc-900 rounded flex items-center justify-center text-xs font-mono text-brand-muted">
+                                [ Analytics Dashboard Viewport ]
                             </div>
                         </div>
                     </div>
-                </article>
-
-                <!-- PROJECT 03 -->
-                <article class="card overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-                    <div class="lg:col-span-7 bg-surface-2 p-8 md:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-surface-border">
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between flex-wrap gap-2">
-                                <span class="badge">Self-Initiated Study</span>
-                                <span class="font-mono text-xs text-content-muted">UX Redesign / Usability Analysis</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-content-main group-hover:text-accent-primary transition-colors">
-                                Academic Portal UX Redesign — Student Learning Hub
-                            </h3>
-                            <p class="text-content-muted text-sm leading-relaxed">
-                                A usability-focused overhaul of traditional student academic portals. Reduced task friction by 40% in user testing prototypes through improved information hierarchy and responsive navigation.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="tag">User Testing</span>
-                                <span class="tag">Information Architecture</span>
-                                <span class="tag">Accessibility (WCAG)</span>
-                                <span class="tag">Figma</span>
-                            </div>
-                        </div>
-                        <div class="pt-8 flex items-center gap-4">
-                            <button onclick="openCaseStudy('redesign')" class="btn-primary text-sm">
-                                Explore Case Study &rarr;
-                            </button>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-5 bg-surface-3 p-8 flex items-center justify-center relative min-h-[300px]">
-                        <div class="w-full h-full rounded-lg bg-surface-1 border border-surface-border p-4 shadow-2xl flex flex-col gap-3 group-hover:scale-[1.02] transition-transform duration-300">
-                            <div class="flex justify-between items-center text-xs font-mono text-content-muted border-b border-surface-border pb-2">
-                                <span>BEFORE vs AFTER</span>
-                                <span class="text-emerald-400">UX Audit Completed</span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2 h-36">
-                                <div class="bg-red-500/10 border border-red-500/20 rounded p-2 text-[10px] text-red-300">
-                                    Legacy Portal Friction
-                                </div>
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 rounded p-2 text-[10px] text-emerald-300">
-                                    Streamlined Architecture
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <hr class="border-surface-border max-w-7xl mx-auto">
-
-        <!-- SKILLS SECTION -->
-        <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
-            <div class="space-y-4 mb-12">
-                <div class="section-label">04 // TECHNICAL & DESIGN CAPABILITIES</div>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-content-main">Categorized Skill Set</h2>
-                <p class="text-content-muted text-base">
-                    Honest, practical capabilities evaluated without artificial percentage bars or exaggerated claims.
-                </p>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="flex flex-wrap gap-2 mb-8" id="skills-tabs">
-                <button class="skill-tab active" data-category="all">All Skills</button>
-                <button class="skill-tab" data-category="design">UI/UX Design</button>
-                <button class="skill-tab" data-category="dev">Development</button>
-                <button class="skill-tab" data-category="ai">AI & Workflows</button>
-                <button class="skill-tab" data-category="tools">Tools & Methods</button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="skills-grid">
-                <!-- DESIGN -->
-                <div class="card p-6 space-y-4 skill-card" data-category="design">
-                    <div class="flex items-center gap-2 text-accent-primary font-mono text-xs font-bold">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-                        <span>DESIGN</span>
-                    </div>
-                    <ul class="space-y-2.5 text-sm text-content-muted">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>UI Design & Visual Hierarchy</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>UX Wireframing & User Flows</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Interactive Prototyping</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Design Systems & Tokens</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Responsive Mobile-First Design</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Accessibility Standards (WCAG)</li>
-                    </ul>
-                </div>
-
-                <!-- DEVELOPMENT -->
-                <div class="card p-6 space-y-4 skill-card" data-category="dev">
-                    <div class="flex items-center gap-2 text-accent-primary font-mono text-xs font-bold">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        <span>DEVELOPMENT</span>
-                    </div>
-                    <ul class="space-y-2.5 text-sm text-content-muted">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>HTML5 (Semantic Markup)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>CSS3 (Flexbox, Grid, Tokens)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>JavaScript (ES6+ DOM Operations)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Python (Fundamentals)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Git & GitHub Version Control</li>
-                    </ul>
-                </div>
-
-                <!-- AI CAPABILITIES -->
-                <div class="card p-6 space-y-4 skill-card" data-category="ai">
-                    <div class="flex items-center gap-2 text-accent-primary font-mono text-xs font-bold">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        <span>AI WORKFLOWS</span>
-                    </div>
-                    <ul class="space-y-2.5 text-sm text-content-muted">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>AI-Assisted Web Scaffolding</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Prompt Engineering & Research</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Anthropic AI Fluency Concepts</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Microsoft AI/ML Fundamentals</li>
-                    </ul>
-                </div>
-
-                <!-- TOOLS & METHODS -->
-                <div class="card p-6 space-y-4 skill-card" data-category="tools">
-                    <div class="flex items-center gap-2 text-accent-primary font-mono text-xs font-bold">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2V4zm2 6a2 2 0 012 2v1a2 2 0 01-2 2 2 2 0 01-2-2v-1a2 2 0 012-2zm-2 8a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2v-1z"></path></svg>
-                        <span>TOOLS & METHODS</span>
-                    </div>
-                    <ul class="space-y-2.5 text-sm text-content-muted">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Figma (Auto Layout, Variants)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Canva & PowerPoint</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>VS Code</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-primary"></span>Structured Presentation Design</li>
-                    </ul>
                 </div>
             </div>
         </section>
 
-        <hr class="border-surface-border max-w-7xl mx-auto">
-
-        <!-- LIVE DESIGN SYSTEM DEMONSTRATION -->
-        <section id="design-system" class="py-24 px-6 max-w-7xl mx-auto">
+        <!-- DESIGN SYSTEM SHOWCASE -->
+        <section id="design-system" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
             <div class="space-y-4 mb-16">
-                <div class="section-label">05 // LIVE UI SYSTEM INTEGRATION</div>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-content-main">Design System Tokens</h2>
-                <p class="text-content-muted text-base max-w-2xl">
-                    Demonstrating systematic UI design execution. Every component in this portfolio is derived from standardized CSS tokens, accessible color ratios, and component states.
+                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">04 // SYSTEMATIC UI PROOF</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Live Design System Tokens</h2>
+                <p class="text-brand-muted text-sm sm:text-base max-w-2xl">
+                    Demonstrating systematic design execution. This entire portfolio is powered by standardized tokens and state variants.
                 </p>
             </div>
 
-            <div class="card p-8 space-y-12 bg-surface-1">
-                <!-- Color Tokens -->
-                <div class="space-y-4">
-                    <h3 class="text-sm font-mono text-content-muted uppercase tracking-wider">01. Color Palette Tokens</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
-                        <div class="p-3 rounded-xl bg-surface-0 border border-surface-border space-y-2">
-                            <div class="h-10 rounded bg-surface-0 border border-surface-border"></div>
-                            <div class="text-xs font-mono text-content-muted">Surface 0</div>
-                            <div class="text-[10px] font-mono text-content-muted">#09090B</div>
+            <div class="card-studio p-8 rounded-2xl space-y-10">
+                <!-- Palette Tokens -->
+                <div class="space-y-3">
+                    <span class="text-xs font-mono text-brand-muted uppercase tracking-wider">01. Color Palette Tokens</span>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
+                            <div class="h-8 rounded bg-[#09090B] border border-zinc-700"></div>
+                            <div class="text-[11px] font-mono text-white">Background</div>
+                            <div class="text-[10px] font-mono text-brand-muted">#09090B</div>
                         </div>
-                        <div class="p-3 rounded-xl bg-surface-0 border border-surface-border space-y-2">
-                            <div class="h-10 rounded bg-surface-1 border border-surface-border"></div>
-                            <div class="text-xs font-mono text-content-muted">Surface 1</div>
-                            <div class="text-[10px] font-mono text-content-muted">#18181B</div>
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
+                            <div class="h-8 rounded bg-[#18181B] border border-zinc-700"></div>
+                            <div class="text-[11px] font-mono text-white">Surface Card</div>
+                            <div class="text-[10px] font-mono text-brand-muted">#18181B</div>
                         </div>
-                        <div class="p-3 rounded-xl bg-surface-0 border border-surface-border space-y-2">
-                            <div class="h-10 rounded bg-surface-2 border border-surface-border"></div>
-                            <div class="text-xs font-mono text-content-muted">Surface 2</div>
-                            <div class="text-[10px] font-mono text-content-muted">#27272A</div>
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
+                            <div class="h-8 rounded bg-[#6366F1]"></div>
+                            <div class="text-[11px] font-mono text-white">Accent Primary</div>
+                            <div class="text-[10px] font-mono text-brand-muted">#6366F1</div>
                         </div>
-                        <div class="p-3 rounded-xl bg-surface-0 border border-surface-border space-y-2">
-                            <div class="h-10 rounded bg-accent-primary"></div>
-                            <div class="text-xs font-mono text-content-muted">Accent Primary</div>
-                            <div class="text-[10px] font-mono text-content-muted">#6366F1</div>
-                        </div>
-                        <div class="p-3 rounded-xl bg-surface-0 border border-surface-border space-y-2">
-                            <div class="h-10 rounded bg-emerald-500"></div>
-                            <div class="text-xs font-mono text-content-muted">Status Success</div>
-                            <div class="text-[10px] font-mono text-content-muted">#10B981</div>
-                        </div>
-                        <div class="p-3 rounded-xl bg-surface-0 border border-surface-border space-y-2">
-                            <div class="h-10 rounded bg-content-muted"></div>
-                            <div class="text-xs font-mono text-content-muted">Text Muted</div>
-                            <div class="text-[10px] font-mono text-content-muted">#A1A1AA</div>
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
+                            <div class="h-8 rounded bg-[#10B981]"></div>
+                            <div class="text-[11px] font-mono text-white">Status Success</div>
+                            <div class="text-[10px] font-mono text-brand-muted">#10B981</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Interactive Buttons Matrix -->
-                <div class="space-y-4 pt-4 border-t border-surface-border">
-                    <h3 class="text-sm font-mono text-content-muted uppercase tracking-wider">02. Interactive Buttons & States</h3>
+                <!-- Interactive State Elements -->
+                <div class="space-y-3 pt-6 border-t border-brand-border">
+                    <span class="text-xs font-mono text-brand-muted uppercase tracking-wider">02. Component State Variants</span>
                     <div class="flex flex-wrap items-center gap-4">
-                        <button class="btn-primary">Primary Action</button>
-                        <button class="btn-secondary">Secondary Action</button>
-                        <button class="btn-ghost">Ghost Button &rarr;</button>
-                        <button class="btn-primary opacity-50 cursor-not-allowed" disabled>Disabled State</button>
-                    </div>
-                </div>
-
-                <!-- Typography System -->
-                <div class="space-y-4 pt-4 border-t border-surface-border">
-                    <h3 class="text-sm font-mono text-content-muted uppercase tracking-wider">03. Typography Hierarchy (Plus Jakarta Sans & JetBrains Mono)</h3>
-                    <div class="space-y-3">
-                        <div class="text-3xl font-bold text-content-main">Heading 1 — 36px / Bold</div>
-                        <div class="text-xl font-semibold text-content-main">Heading 2 — 20px / Semibold</div>
-                        <div class="text-base text-content-muted">Body Regular — 16px / Balanced line height for maximum legibility</div>
-                        <div class="font-mono text-xs text-accent-primary">Code & Monospace Label — 12px / Monospace Alignment</div>
+                        <button class="btn-glow px-4 py-2 text-xs font-semibold rounded-lg text-white">Primary Active</button>
+                        <button class="px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-800 border border-zinc-700 text-white">Secondary Action</button>
+                        <button class="px-4 py-2 text-xs font-semibold text-brand-muted hover:text-white">Ghost Link &rarr;</button>
+                        <button class="px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-600 cursor-not-allowed">Disabled State</button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <hr class="border-surface-border max-w-7xl mx-auto">
 
         <!-- RESUME SECTION -->
-        <section id="resume" class="py-24 px-6 max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <section id="resume" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
                 <div class="space-y-4">
-                    <div class="section-label">06 // VERIFIED CURRICULUM VITAE</div>
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-content-main">Professional Resume</h2>
-                    <p class="text-content-muted text-base max-w-xl">
-                        Clean, truthful background summary. Open to student roles, web design internships, and junior UI/UX positions.
-                    </p>
+                    <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">05 // CURRICULUM VITAE</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Verified Background</h2>
                 </div>
-                <div>
-                    <a href="javascript:void(0)" onclick="window.print()" class="btn-primary">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 2 0 01-2-2V5a2 2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 2 0 01-2 2z"></path></svg>
-                        <span>Print / Save PDF</span>
-                    </a>
-                </div>
+                <button onclick="window.print()" class="btn-glow px-6 py-3 text-xs font-semibold rounded-xl text-white w-fit">
+                    Print / Save PDF
+                </button>
             </div>
 
-            <!-- Resume Document Styling -->
-            <div class="card p-8 md:p-12 space-y-10 bg-surface-1 border border-surface-border">
-                
-                <!-- Resume Header -->
-                <div class="border-b border-surface-border pb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="card-studio p-8 sm:p-12 rounded-2xl space-y-8">
+                <div class="border-b border-brand-border pb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
-                        <h3 class="text-3xl font-extrabold text-content-main">Vaishnavi Shekar</h3>
-                        <p class="text-accent-primary font-mono text-sm mt-1">Aspiring UI/UX Designer • Web Designer • AI-Powered Developer</p>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Vaishnavi Shekar</h3>
+                        <p class="text-indigo-400 font-mono text-xs sm:text-sm mt-1">Aspiring UI/UX Designer • Web Designer • AI-Powered Developer</p>
                     </div>
-                    <div class="text-xs font-mono text-content-muted space-y-1">
-                        <div>Bengaluru, Karnataka, India</div>
+                    <div class="text-xs font-mono text-brand-muted space-y-1">
+                        <div>Bengaluru, Karnataka, India[cite: 1]</div>
                         <div>vaishnavishekar2008@gmail.com[cite: 1]</div>
                         <div>+91 8951675099 / +91 8139999349[cite: 1]</div>
                     </div>
                 </div>
 
-                <!-- Summary -->
                 <div class="space-y-2">
-                    <h4 class="text-xs font-mono text-accent-primary uppercase tracking-wider">Professional Summary</h4>
-                    <p class="text-sm text-content-muted leading-relaxed">
-                        Incoming B.Tech Civil Engineering student at BMS College of Engineering with a passion for web design, user interface engineering, and modern AI workflows[cite: 1]. Combines analytical problem-solving with creative design execution, Canva/PowerPoint presentation design[cite: 1], and practical front-end web development skills.
-                    </p>
-                </div>
-
-                <!-- Education -->
-                <div class="space-y-4">
-                    <h4 class="text-xs font-mono text-accent-primary uppercase tracking-wider">Education</h4>
-                    <div class="space-y-3">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                            <div>
-                                <span class="font-bold text-content-main text-sm">B.Tech in Civil Engineering</span>
-                                <span class="text-xs text-content-muted block">BMS College of Engineering (BMSCE), Bengaluru</span>[cite: 1]
-                            </div>
-                            <span class="font-mono text-xs text-content-muted">2026 – 2030</span>[cite: 1]
-                        </div>
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                            <div>
-                                <span class="font-bold text-content-main text-sm">Class 12 Higher Secondary</span>
-                            </div>
-                            <span class="font-mono text-xs text-content-muted">Completed 2026</span>[cite: 1]
-                        </div>
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                            <div>
-                                <span class="font-bold text-content-main text-sm">Class 10 Secondary Education</span>
-                            </div>
-                            <span class="font-mono text-xs text-content-muted">Completed 2024</span>[cite: 1]
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certifications & Learning -->
-                <div class="space-y-4">
-                    <h4 class="text-xs font-mono text-accent-primary uppercase tracking-wider">Certifications & Active Coursework</h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-4 rounded-lg bg-surface-2 border border-surface-border text-xs space-y-1">
-                            <div class="font-bold text-content-main">Anthropic AI Fluency</div>[cite: 1]
-                            <div class="text-content-muted">Completed Certification</div>
-                        </div>
-                        <div class="p-4 rounded-lg bg-surface-2 border border-surface-border text-xs space-y-1">
-                            <div class="font-bold text-content-main">Microsoft AI/ML Fundamentals</div>
-                            <div class="text-content-muted">Completed Fundamentals</div>
-                        </div>
-                        <div class="p-4 rounded-lg bg-surface-2 border border-surface-border text-xs space-y-1">
-                            <div class="font-bold text-content-main">Harvard CS50x</div>[cite: 1]
-                            <div class="text-content-muted">Currently Enrolled / In Progress</div>[cite: 1]
-                        </div>
-                        <div class="p-4 rounded-lg bg-surface-2 border border-surface-border text-xs space-y-1">
-                            <div class="font-bold text-content-main">Python Programming</div>[cite: 1]
-                            <div class="text-content-muted">Active Skill Development</div>[cite: 1]
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projects Overview -->
-                <div class="space-y-4">
-                    <h4 class="text-xs font-mono text-accent-primary uppercase tracking-wider">Featured Self-Initiated Projects</h4>
-                    <div class="space-y-3 text-xs">
+                    <span class="text-xs font-mono text-indigo-400 uppercase">Education</span>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between text-sm">
                         <div>
-                            <div class="font-bold text-content-main">AURA — Restaurant UI/UX & Web Implementation</div>
-                            <div class="text-content-muted">Designed interactive Figma mockups and built responsive semantic HTML/CSS front-end code.</div>
+                            <span class="font-bold text-white">B.Tech in Civil Engineering</span>
+                            <span class="text-brand-muted text-xs block">BMS College of Engineering (BMSCE), Bengaluru</span>[cite: 1]
                         </div>
-                        <div>
-                            <div class="font-bold text-content-main">PULSE AI — SaaS Analytics Interface Concept</div>
-                            <div class="text-content-muted">Architected information hierarchy, component states, and accessibility tokens for data dashboards.</div>
-                        </div>
+                        <span class="font-mono text-xs text-brand-muted">2026 – 2030</span>[cite: 1]
                     </div>
                 </div>
 
+                <div class="space-y-2">
+                    <span class="text-xs font-mono text-indigo-400 uppercase">Certifications & Active Coursework</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
+                            <span class="font-bold text-white block">Anthropic AI Fluency</span>[cite: 1]
+                            <span class="text-brand-muted">Completed Certification</span>
+                        </div>
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
+                            <span class="font-bold text-white block">Microsoft AI/ML Fundamentals</span>
+                            <span class="text-brand-muted">Completed Fundamentals</span>
+                        </div>
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
+                            <span class="font-bold text-white block">Harvard CS50x</span>[cite: 1]
+                            <span class="text-brand-muted">Currently Learning</span>[cite: 1]
+                        </div>
+                        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800">
+                            <span class="font-bold text-white block">Python Programming</span>[cite: 1]
+                            <span class="text-brand-muted">Active Skill Development</span>[cite: 1]
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <hr class="border-surface-border max-w-7xl mx-auto">
-
         <!-- CONTACT SECTION -->
-        <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
-            <div class="card p-8 md:p-16 text-center space-y-8 bg-gradient-to-b from-surface-1 to-surface-2 relative overflow-hidden">
-                <div class="section-label mx-auto">07 // LET'S CONNECT</div>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-content-main">Ready to build together.</h2>
-                <p class="text-content-muted text-base md:text-lg max-w-2xl mx-auto">
-                    I am actively seeking Web Design Internships, Junior UI/UX roles, and design collaborations in Bengaluru or remotely[cite: 1].
+        <section id="contact" class="py-24 px-6 max-w-7xl mx-auto border-t border-brand-border">
+            <div class="card-studio p-8 sm:p-16 rounded-3xl text-center space-y-6">
+                <span class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest">06 // GET IN TOUCH</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Let's build something extraordinary.</h2>
+                <p class="text-brand-muted text-sm sm:text-base max-w-xl mx-auto">
+                    Open for Web Design Internships, Junior UI/UX roles, and design collaborations in Bengaluru or remotely[cite: 1].
                 </p>
 
                 <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <a href="mailto:vaishnavishekar2008@gmail.com" class="btn-primary">[cite: 1]
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <span>Send Email</span>
+                    <a href="mailto:vaishnavishekar2008@gmail.com" class="btn-glow px-8 py-3.5 text-sm font-semibold rounded-xl text-white">[cite: 1]
+                        Send Email
                     </a>
-                    <a href="https://linkedin.com/in/[YOUR-LINKEDIN]" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                        <span>LinkedIn</span>
+                    <a href="tel:+918951675099" class="px-8 py-3.5 text-sm font-semibold rounded-xl bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-colors">[cite: 1]
+                        Call / WhatsApp
                     </a>
-                    <a href="https://github.com/[YOUR-GITHUB]" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                        <span>GitHub</span>
-                    </a>
-                </div>
-
-                <div class="pt-8 text-xs font-mono text-content-muted flex items-center justify-center gap-4 border-t border-surface-border/50">
-                    <span>Email: vaishnavishekar2008@gmail.com</span> •[cite: 1]
-                    <span>Phone: +91 8951675099</span>[cite: 1]
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-surface-border py-8 px-6 text-center text-xs font-mono text-content-muted">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>© 2026 Vaishnavi Shekar. Built with HTML, CSS, & Vanilla JS.</div>
-            <div class="flex gap-4">
-                <a href="#hero" class="hover:text-content-main transition-colors">Back to Top ↑</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- CASE STUDY MODAL OVERLAY -->
-    <div id="case-study-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 overflow-y-auto">
-        <div class="min-h-screen px-4 py-12 flex items-center justify-center">
-            <div class="card max-w-4xl w-full p-6 md:p-12 space-y-8 bg-surface-1 border border-surface-border relative">
-                <!-- Close Button -->
-                <button onclick="closeCaseStudy()" class="absolute top-6 right-6 p-2 rounded-lg bg-surface-2 text-content-muted hover:text-content-main focus:outline-none" aria-label="Close Case Study">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-
-                <!-- Dynamic Modal Content -->
-                <div id="modal-content" class="space-y-8">
-                    <!-- Populated dynamically via script.js -->
-                </div>
+    <!-- CASE STUDY MODAL -->
+    <div id="modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="card-studio max-w-2xl w-full p-8 rounded-2xl space-y-6 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-brand-muted hover:text-white text-xl">&times;</button>
+            <div id="modal-body" class="space-y-4">
+                <!-- Content injected via JS -->
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- SCRIPT LOGIC -->
+    <script>
+        const wfData = {
+            1: { title: "1. Problem Definition & Intent Mapping", owner: "Human Led", desc: "Synthesizing constraints, business goals, and user intents before initiating design." },
+            2: { title: "2. Contextual Research & Benchmarking", owner: "Human + AI Co-Op", desc: "Using AI tools to aggregate competitive UI patterns, WCAG compliance metrics, and user task flow models." },
+            3: { title: "3. Rapid AI Design & Layout Exploration", owner: "AI Accelerated", desc: "Generating multi-variate component ideas, typography pairing options, design tokens, and CSS layout grids." },
+            4: { title: "4. Strategic Human Design Decisions", owner: "Human Decision", desc: "Applying taste, aesthetic judgment, accessibility auditing, and brand positioning to select optimal layouts." },
+            5: { title: "5. High-Fidelity Figma Prototyping", owner: "Human Crafted", desc: "Structuring auto-layout frames, interactive component variants, design tokens, and screen transitions in Figma." },
+            6: { title: "6. Front-End Code Implementation", owner: "AI-Assisted Code", desc: "Scaffolding semantic HTML, CSS utility tokens, and vanilla JS logic with AI pair programming." },
+            7: { title: "7. Accessibility Testing & Iteration", owner: "Human Validated", desc: "Validating contrast ratios, keyboard DOM navigation, mobile screen sizes, and performance score optimization." }
+        };
+
+        function setWfStep(step) {
+            document.querySelectorAll('.wf-step-btn').forEach((btn, i) => {
+                if (i + 1 === step) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            const d = wfData[step];
+            document.getElementById('wf-step-label').textContent = `STAGE 0${step} OF 07`;
+            document.getElementById('wf-owner-label').textContent = d.owner;
+            document.getElementById('wf-title').textContent = d.title;
+            document.getElementById('wf-desc').textContent = d.desc;
+        }
+
+        const modals = {
+            aura: { title: "AURA Culinary Platform", text: "End-to-end dining web concept featuring dynamic reservation flows and full WCAG accessibility compliance." },
+            pulse: { title: "PULSE AI Dashboard", text: "SaaS interface conceptualized to aggregate cross-project telemetry and workspace metrics with zero clutter." }
+        };
+
+        function openModal(key) {
+            const m = modals[key];
+            document.getElementById('modal-body').innerHTML = `
+                <h3 class="text-2xl font-bold text-white">${m.title}</h3>
+                <p class="text-sm text-brand-muted leading-relaxed">${m.text}</p>
+                <button onclick="closeModal()" class="btn-glow px-4 py-2 text-xs font-semibold rounded-lg text-white mt-4">Close View</button>
+            `;
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('modal').classList.remove('flex');
+        }
+    </script>
 </body>
 </html>
