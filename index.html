@@ -3,863 +3,346 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vaishnavi Shekar | UI/UX Designer • Web Designer • AI-Powered Developer</title>
-  <meta name="description" content="Portfolio of Vaishnavi Shekar - Combining UI/UX design, front-end development, analytical problem solving, and modern AI workflows." />
+  <title>Vaishnavi Shekar | Portfolio</title>
+  
+  <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- Ambient Background Canvas Grid -->
+  <div class="bg-grid-overlay"></div>
+  <div class="glow-sphere glow-blue"></div>
+  <div class="glow-sphere glow-red"></div>
+
   <!-- Navigation -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="brand-logo">
-        <span class="logo-text">VS</span>
-        <span class="logo-dot"></span>
+      <a href="#hero" class="nav-logo">
+        <span class="logo-accent">&lt;</span>VS<span class="logo-accent">&nbsp;/&gt;</span>
       </a>
-      
-      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
-        <a href="#work" class="nav-item">WORK</a>
-        <a href="#ai-workflow" class="nav-item">AI WORKFLOW</a>
-        <a href="#design-system" class="nav-item">DESIGN SYSTEM</a>
-        <a href="#about" class="nav-item">ABOUT</a>
-        <a href="#resume" class="nav-item">RESUME</a>
-        <a href="#contact" class="nav-item">CONTACT</a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="./Vaishnavi_Shekar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm nav-resume-btn">
+          <i class="fa-solid fa-file-arrow-down"></i> Resume
+        </a>
       </nav>
 
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary-sm">LET'S CONNECT</a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
-  <main id="main-content">
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="hero">
-      <div class="container grid hero-grid">
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
         <div class="hero-content">
-          <div class="hero-badge reveal">
-            <span class="badge-dot"></span>
-            DESIGN × CODE × AI
+          <div class="badge">
+            <span class="pulse-dot"></span> Open for Engineering Internships & Roles
           </div>
-          
-          <h1 class="hero-headline reveal">
-            Designing digital experiences.<br />
-            <span class="text-accent">Building them into reality.</span>
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight-blue">Vaishnavi Shekar</span>
           </h1>
-
-          <p class="hero-subtext reveal">
-            I combine UI/UX thinking, front-end development, and modern AI workflows to turn complex ideas into refined, accessible digital products.
-          </p>
-
-          <div class="hero-cta reveal">
-            <a href="#work" class="btn btn-primary">
-              VIEW MY WORK
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </a>
-            <a href="#resume" class="btn btn-secondary">
-              DOWNLOAD RESUME
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
-            </a>
-          </div>
-
-          <div class="hero-meta reveal">
-            <div class="meta-item">
-              <span class="meta-label">FOCUS</span>
-              <span class="meta-val">Product Design & Front-End</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">LOCATION</span>
-              <span class="meta-val">Bengaluru, India</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- HERO COMPOSITION (Interactive/Rendered Digital Workspace) -->
-        <div class="hero-visual reveal">
-          <div class="visual-stack">
-            <!-- Glass Layer 1: Aura Restaurant UI -->
-            <div class="stack-card card-aura">
-              <div class="browser-bar">
-                <div class="browser-dots"><span></span><span></span><span></span></div>
-                <div class="browser-address">aura-fine-dining.app</div>
-              </div>
-              <div class="card-body aura-preview">
-                <div class="aura-nav">
-                  <span class="aura-brand">AURA</span>
-                  <div class="aura-pill">Reserve Table</div>
-                </div>
-                <div class="aura-hero">
-                  <span class="aura-tag">SEASONAL MENU</span>
-                  <h4>Artisanal Gastronomy</h4>
-                  <div class="aura-grid">
-                    <div class="food-chip"><span>Tasting Menu</span><strong>$120</strong></div>
-                    <div class="food-chip"><span>Wine Pairing</span><strong>$85</strong></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Glass Layer 2: PULSE AI Dashboard UI -->
-            <div class="stack-card card-pulse">
-              <div class="pulse-header">
-                <div class="pulse-logo">
-                  <span class="pulse-icon"></span>
-                  PULSE.AI
-                </div>
-                <span class="status-live">● LIVE METRICS</span>
-              </div>
-              <div class="pulse-metrics">
-                <div class="metric-box">
-                  <span class="m-title">AI Processing</span>
-                  <span class="m-val">98.4%</span>
-                  <div class="sparkline"><svg viewBox="0 0 100 20"><path d="M0,15 Q25,5 50,12 T100,2" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
-                </div>
-                <div class="metric-box">
-                  <span class="m-title">Latency</span>
-                  <span class="m-val">12ms</span>
-                  <span class="m-badge positive">-4ms</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Glass Layer 3: Mobile UI Frame -->
-            <div class="stack-card card-mobile">
-              <div class="mobile-notch"></div>
-              <div class="mobile-content">
-                <div class="m-card-header">
-                  <small>Daily Insight</small>
-                  <h6>Design System v2.4</h6>
-                </div>
-                <div class="m-toggle-group">
-                  <div class="m-toggle active">UX Flow</div>
-                  <div class="m-toggle">Tokens</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Decorative Accents -->
-            <div class="hero-glow"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SELECTED WORK SECTION -->
-    <section class="section section-work" id="work">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-subtitle">PORTFOLIO CENTERPIECE</span>
-          <h2 class="section-title">Selected Work</h2>
-          <p class="section-desc">Practical UI/UX case studies and fully implemented web interfaces.</p>
-        </div>
-
-        <div class="work-list">
-
-          <!-- PROJECT 01: AURA -->
-          <article class="project-card reveal">
-            <div class="project-grid">
-              <div class="project-info">
-                <div class="project-meta-badge">01 — SELF-INITIATED PROJECT</div>
-                <h3 class="project-title">AURA</h3>
-                <p class="project-tagline">Restaurant UI/UX + Web Implementation</p>
-                <p class="project-description">
-                  A high-end restaurant web platform combining elegant editorial typography, interactive digital menu exploration, and an intuitive reservation booking engine. From UX wireframing to fully responsive web implementation.
-                </p>
-
-                <div class="tag-cloud">
-                  <span class="tag">UI/UX</span>
-                  <span class="tag">FIGMA</span>
-                  <span class="tag">WEB DESIGN</span>
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JAVASCRIPT</span>
-                </div>
-
-                <div class="project-actions">
-                  <button class="btn btn-outline modal-trigger" data-modal="modal-aura">
-                    EXPLORE CASE STUDY
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="project-preview">
-                <!-- Browser & Phone Mockup Combination -->
-                <div class="mockup-container">
-                  <div class="desktop-mockup">
-                    <div class="mockup-header">
-                      <span class="dot red"></span>
-                      <span class="dot yellow"></span>
-                      <span class="dot green"></span>
-                      <span class="address">aura-restaurant.com</span>
-                    </div>
-                    <div class="mockup-screen aura-screen">
-                      <div class="screen-hero">
-                        <div class="screen-brand">AURA</div>
-                        <h1>Culinary Artistry Redefined</h1>
-                        <div class="screen-cta">Explore Menu</div>
-                      </div>
-                      <div class="screen-grid">
-                        <div class="screen-card">
-                          <div class="card-img-placeholder dark"></div>
-                          <h5>Chef's Tasting</h5>
-                          <p>7-Course Experience</p>
-                        </div>
-                        <div class="screen-card">
-                          <div class="card-img-placeholder accent"></div>
-                          <h5>Cellar Collection</h5>
-                          <p>Vintage Pairings</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="phone-mockup">
-                    <div class="phone-notch"></div>
-                    <div class="phone-screen aura-mobile-screen">
-                      <div class="mobile-header">
-                        <span>AURA</span>
-                        <div class="m-menu-icon"><span></span><span></span></div>
-                      </div>
-                      <div class="mobile-body">
-                        <small>RESERVATIONS</small>
-                        <h4>Table Booking</h4>
-                        <div class="m-input-box">2 Guests • 8:00 PM</div>
-                        <div class="m-btn">Confirm Table</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 02: PULSE -->
-          <article class="project-card reveal">
-            <div class="project-grid reverse">
-              <div class="project-info">
-                <div class="project-meta-badge">02 — SELF-INITIATED CONCEPT</div>
-                <h3 class="project-title">PULSE</h3>
-                <p class="project-tagline">AI SaaS Analytics Dashboard Concept</p>
-                <p class="project-description">
-                  A high-density data visualization system designed for engineers and AI product teams. Focuses on information hierarchy, accessible color palettes for complex charts, and clear system status feeds.
-                </p>
-
-                <div class="tag-cloud">
-                  <span class="tag">UI/UX</span>
-                  <span class="tag">PRODUCT DESIGN</span>
-                  <span class="tag">DESIGN SYSTEM</span>
-                  <span class="tag">RESPONSIVE DESIGN</span>
-                  <span class="tag">ACCESSIBILITY</span>
-                </div>
-
-                <div class="project-actions">
-                  <button class="btn btn-outline modal-trigger" data-modal="modal-pulse">
-                    EXPLORE CASE STUDY
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="project-preview">
-                <!-- Dashboard Interface UI Render -->
-                <div class="dashboard-mockup">
-                  <div class="dash-sidebar">
-                    <div class="dash-logo">P</div>
-                    <div class="dash-nav-icon active"></div>
-                    <div class="dash-nav-icon"></div>
-                    <div class="dash-nav-icon"></div>
-                  </div>
-                  <div class="dash-main">
-                    <div class="dash-topbar">
-                      <span class="dash-title">AI Engine Health</span>
-                      <span class="dash-user-badge">Admin</span>
-                    </div>
-                    <div class="dash-widgets">
-                      <div class="dash-widget widget-main">
-                        <div class="widget-header">
-                          <span>Token Throughput / sec</span>
-                          <strong>2.4M</strong>
-                        </div>
-                        <div class="chart-bars">
-                          <div class="bar" style="--h: 40%"></div>
-                          <div class="bar" style="--h: 65%"></div>
-                          <div class="bar" style="--h: 50%"></div>
-                          <div class="bar" style="--h: 85%"></div>
-                          <div class="bar" style="--h: 70%"></div>
-                          <div class="bar" style="--h: 95%"></div>
-                          <div class="bar accent" style="--h: 100%"></div>
-                        </div>
-                      </div>
-                      <div class="dash-widget widget-side">
-                        <h6>AI Insights</h6>
-                        <div class="insight-item">
-                          <span class="dot-active"></span>
-                          Latency reduced by 14%
-                        </div>
-                        <div class="insight-item">
-                          <span class="dot-active"></span>
-                          Prompt cache optimization
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 03: UX REDESIGN -->
-          <article class="project-card reveal">
-            <div class="project-grid">
-              <div class="project-info">
-                <div class="project-meta-badge">03 — SELF-INITIATED UX CASE STUDY</div>
-                <h3 class="project-title">Fintech Mobile Checkout</h3>
-                <p class="project-tagline">Visual Transformation & Friction Reduction</p>
-                <p class="project-description">
-                  Redesigning a high-dropoff checkout flow for a mobile payments platform. Replaced fragmented multistep forms with an inline, touch-friendly single-screen flow.
-                </p>
-
-                <div class="tag-cloud">
-                  <span class="tag">UX RESEARCH</span>
-                  <span class="tag">WIREFRAMING</span>
-                  <span class="tag">USER FLOWS</span>
-                  <span class="tag">PROTOTYPING</span>
-                </div>
-
-                <div class="project-actions">
-                  <button class="btn btn-outline modal-trigger" data-modal="modal-ux">
-                    VIEW TRANSFORMATIVE PROCESS
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="project-preview">
-                <!-- Visual Transformation Showcase -->
-                <div class="transformation-container">
-                  <div class="trans-before">
-                    <span class="trans-label label-before">BEFORE (5 Steps)</span>
-                    <div class="wireframe-box cluttered">
-                      <div class="wf-line"></div>
-                      <div class="wf-line short"></div>
-                      <div class="wf-block"></div>
-                      <div class="wf-block"></div>
-                      <span class="trans-alert">High Dropoff</span>
-                    </div>
-                  </div>
-                  
-                  <div class="trans-arrow">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </div>
-
-                  <div class="trans-after">
-                    <span class="trans-label label-after">AFTER (1 Screen)</span>
-                    <div class="wireframe-box polished">
-                      <div class="ui-pill-group">
-                        <span class="u-pill active">Apple Pay</span>
-                        <span class="u-pill">Card</span>
-                      </div>
-                      <div class="ui-button-accent">Instant Pay • $42.00</div>
-                      <span class="trans-success">Friction Removed</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- DESIGN SYSTEM SECTION -->
-    <section class="section section-ds" id="design-system">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-subtitle">FOUNDATIONAL STANDARDS</span>
-          <h2 class="section-title">Design System Architecture</h2>
-          <p class="section-desc">Interactive live demonstration of design tokens, component architecture, and typography hierarchy.</p>
-        </div>
-
-        <div class="ds-workspace reveal">
-          <!-- DS Tabs -->
-          <div class="ds-tabs" role="tablist">
-            <button class="ds-tab active" role="tab" aria-selected="true" data-tab="ds-tokens">Tokens & Colors</button>
-            <button class="ds-tab" role="tab" aria-selected="false" data-tab="ds-typography">Typography</button>
-            <button class="ds-tab" role="tab" aria-selected="false" data-tab="ds-components">Components</button>
-            <button class="ds-tab" role="tab" aria-selected="false" data-tab="ds-spacing">Spacing Grid</button>
-          </div>
-
-          <!-- Tab Content 1: Tokens -->
-          <div class="ds-panel active" id="ds-tokens">
-            <div class="swatch-grid">
-              <div class="swatch-card">
-                <div class="swatch-color" style="background: var(--bg-warm);"></div>
-                <div class="swatch-info">
-                  <strong>Warm Ivory</strong>
-                  <code>#FBFBFA</code>
-                  <small>Primary Background</small>
-                </div>
-              </div>
-
-              <div class="swatch-card">
-                <div class="swatch-color" style="background: var(--text-main);"></div>
-                <div class="swatch-info">
-                  <strong>Deep Charcoal</strong>
-                  <code>#121316</code>
-                  <small>Primary Text & Dark BG</small>
-                </div>
-              </div>
-
-              <div class="swatch-card">
-                <div class="swatch-color" style="background: var(--accent-blue);"></div>
-                <div class="swatch-info">
-                  <strong>Electric Cobalt</strong>
-                  <code>#2563EB</code>
-                  <small>Primary Brand Accent</small>
-                </div>
-              </div>
-
-              <div class="swatch-card">
-                <div class="swatch-color" style="background: var(--accent-soft);"></div>
-                <div class="swatch-info">
-                  <strong>Subtle Peach</strong>
-                  <code>#FFF1EC</code>
-                  <small>Highlight Surface</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content 2: Typography -->
-          <div class="ds-panel" id="ds-typography">
-            <div class="typo-stack">
-              <div class="typo-row">
-                <span class="typo-label">Display H1</span>
-                <span class="typo-sample sample-h1">Plus Jakarta Sans 48px / Bold</span>
-              </div>
-              <div class="typo-row">
-                <span class="typo-label">Section H2</span>
-                <span class="typo-sample sample-h2">Plus Jakarta Sans 32px / SemiBold</span>
-              </div>
-              <div class="typo-row">
-                <span class="typo-label">Card Title H3</span>
-                <span class="typo-sample sample-h3">Plus Jakarta Sans 20px / Medium</span>
-              </div>
-              <div class="typo-row">
-                <span class="typo-label">Body Text</span>
-                <span class="typo-sample sample-body">Inter / Space Grotesk 16px / Regular - Clean, legible body copy for long-form case studies.</span>
-              </div>
-              <div class="typo-row">
-                <span class="typo-label">Caption / Code</span>
-                <span class="typo-sample sample-code">Space Grotesk 13px / Monospace metadata</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content 3: Components -->
-          <div class="ds-panel" id="ds-components">
-            <div class="comp-showcase">
-              <div class="comp-group">
-                <span class="group-title">Buttons</span>
-                <div class="comp-row">
-                  <button class="btn btn-primary">Primary</button>
-                  <button class="btn btn-secondary">Secondary</button>
-                  <button class="btn btn-outline">Outline</button>
-                </div>
-              </div>
-
-              <div class="comp-group">
-                <span class="group-title">Badges & Tags</span>
-                <div class="comp-row">
-                  <span class="tag">DESIGN SYSTEM</span>
-                  <span class="hero-badge" style="margin:0;"><span class="badge-dot"></span>ACTIVE</span>
-                  <span class="m-badge positive">+12.5%</span>
-                </div>
-              </div>
-
-              <div class="comp-group">
-                <span class="group-title">Form Controls</span>
-                <div class="comp-row">
-                  <input type="text" class="ds-input" placeholder="Sample Text Input" readonly />
-                  <div class="m-toggle-group">
-                    <div class="m-toggle active">On</div>
-                    <div class="m-toggle">Off</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content 4: Spacing Grid -->
-          <div class="ds-panel" id="ds-spacing">
-            <div class="spacing-grid">
-              <div class="spacing-box"><span class="s-size">8px</span><div class="s-bar" style="width: 8px;"></div></div>
-              <div class="spacing-box"><span class="s-size">16px</span><div class="s-bar" style="width: 16px;"></div></div>
-              <div class="spacing-box"><span class="s-size">24px</span><div class="s-bar" style="width: 24px;"></div></div>
-              <div class="spacing-box"><span class="s-size">32px</span><div class="s-bar" style="width: 32px;"></div></div>
-              <div class="spacing-box"><span class="s-size">48px</span><div class="s-bar" style="width: 48px;"></div></div>
-              <div class="spacing-box"><span class="s-size">64px</span><div class="s-bar" style="width: 64px;"></div></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- AI WORKFLOW SECTION (Dark Contrast Theme) -->
-    <section class="section section-dark section-ai" id="ai-workflow">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-subtitle accent-text">HUMAN-IN-THE-LOOP INTEGRATION</span>
-          <h2 class="section-title light-text">AI × Design × Development</h2>
-          <p class="section-desc light-sub">
-            "AI accelerates the exploration process. Human judgment defines the final result."
-          </p>
-        </div>
-
-        <div class="workflow-interactive reveal">
-          <p class="workflow-intro">Hover or tap on nodes to explore AI integration points across the development lifecycle:</p>
-
-          <div class="workflow-nodes">
-            
-            <div class="wf-node" data-info="AI assists with user persona synthesis, competitor analysis, and heuristic evaluations.">
-              <span class="node-num">01</span>
-              <h4>RESEARCH</h4>
-              <span class="node-tag">AI-Assisted</span>
-            </div>
-
-            <div class="node-connector">→</div>
-
-            <div class="wf-node" data-info="Rapid text-to-layout ideas, generating multiple wireframe variants in minutes.">
-              <span class="node-num">02</span>
-              <h4>IDEATION</h4>
-              <span class="node-tag">Rapid Generation</span>
-            </div>
-
-            <div class="node-connector">→</div>
-
-            <div class="wf-node highlight" data-info="CRITICAL STEP: Evaluating accessibility, brand fit, visual rhythm, and design ethics.">
-              <span class="node-num">03</span>
-              <h4>HUMAN DECISION</h4>
-              <span class="node-tag human">Human Curation</span>
-            </div>
-
-            <div class="node-connector">→</div>
-
-            <div class="wf-node" data-info="Generating modular CSS/JS scaffolding and debugging complex component logic.">
-              <span class="node-num">04</span>
-              <h4>DEVELOPMENT</h4>
-              <span class="node-tag">AI-Assisted Code</span>
-            </div>
-
-            <div class="node-connector">→</div>
-
-            <div class="wf-node" data-info="Usability testing, performance tuning, and responsive refinements.">
-              <span class="node-num">05</span>
-              <h4>REFINE & TEST</h4>
-              <span class="node-tag">Validation</span>
-            </div>
-
-          </div>
-
-          <div class="workflow-detail-box" id="node-detail-display">
-            Hover over any step above to inspect specific AI methodologies and human touchpoints.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- UX PROCESS SECTION -->
-    <section class="section section-process" id="ux-process">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-subtitle">METHODOLOGY</span>
-          <h2 class="section-title">End-to-End UX Process</h2>
-          <p class="section-desc">A structured approach to solving problems from initial ambiguity to production code.</p>
-        </div>
-
-        <div class="process-grid reveal">
-          <div class="process-step">
-            <div class="step-icon">01</div>
-            <h4>DISCOVER</h4>
-            <p>Auditing existing interfaces, user feedback, and market benchmarks.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">02</div>
-            <h4>DEFINE</h4>
-            <p>Mapping user journeys, problem statements, and key success metrics.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">03</div>
-            <h4>IDEATE</h4>
-            <p>Sketching low-fidelity concepts and exploring layout possibilities.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">04</div>
-            <h4>PROTOTYPE</h4>
-            <p>Creating interactive Figma flows & responsive code implementations.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-icon">05</div>
-            <h4>TEST & ITERATE</h4>
-            <p>Validating usability, contrast standards, and touch-target sizing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section class="section section-about" id="about">
-      <div class="container grid about-grid">
-        <div class="about-text reveal">
-          <span class="section-subtitle">BIOGRAPHY & PERSPECTIVE</span>
-          <h2 class="large-quote">
-            "I like solving complex problems at the intersection of design and technology."
+          <h2 class="hero-subtitle">
+            B.Tech Computer Science Student &amp; Tech Enthusiast
           </h2>
-          <p class="about-p">
-            I am pursuing B.Tech Civil Engineering at BMS College of Engineering while independently developing my skills in UI/UX design, web development, and AI workflows.
+          <p class="hero-description">
+            Passionate about building scalable software solutions, modern web experiences, and solving complex problems with clean, efficient code.
           </p>
-          <p class="about-p">
-            My engineering training contributes a structured, analytical mindset to product design—allowing me to evaluate edge cases, data structures, and spatial hierarchy with precision. I enjoy understanding how humans interact with digital interfaces and translating those insights into useful, accessible experiences.
-          </p>
-        </div>
 
-        <div class="skills-matrix reveal">
-          <h3 class="matrix-title">Core Competencies</h3>
-
-          <div class="skill-cat">
-            <span class="cat-name">DESIGN</span>
-            <div class="cat-tags">
-              <span>UI Design</span>
-              <span>UX Research</span>
-              <span>Wireframing</span>
-              <span>Prototyping</span>
-              <span>Design Systems</span>
-              <span>Responsive Layouts</span>
-              <span>Accessibility (WCAG)</span>
-            </div>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i> View Work
+            </a>
+            <a href="./Vaishnavi_Shekar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Resume
+            </a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
           </div>
 
-          <div class="skill-cat">
-            <span class="cat-name">DEVELOPMENT</span>
-            <div class="cat-tags">
-              <span>HTML5</span>
-              <span>CSS3 / SASS</span>
-              <span>JavaScript (ES6+)</span>
-              <span>Python</span>
-              <span>Git & GitHub</span>
-            </div>
-          </div>
-
-          <div class="skill-cat">
-            <span class="cat-name">AI WORKFLOWS</span>
-            <div class="cat-tags">
-              <span>AI-Assisted Development</span>
-              <span>AI Research Synthesis</span>
-              <span>Prompt Engineering</span>
-              <span>Rapid Prototyping</span>
-            </div>
-          </div>
-
-          <div class="skill-cat">
-            <span class="cat-name">TOOLS</span>
-            <div class="cat-tags">
-              <span>Figma</span>
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>Canva</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUME SECTION -->
-    <section class="section section-resume" id="resume">
-      <div class="container">
-        <div class="resume-card reveal">
-          <div class="resume-header">
-            <div>
-              <h2 class="resume-name">VAISHNAVI SHEKAR</h2>
-              <p class="resume-role">UI/UX Designer • Web Designer • AI-Powered Developer</p>
-            </div>
-            <a href="#" class="btn btn-primary" onclick="alert('Resume PDF download link can be linked here.'); return false;">
-              DOWNLOAD RESUME PDF
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+          <div class="social-links">
+            <a href="https://github.com/vaishnavi-shekar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/vaishnavi-shekar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:vaishnavi.shekar@example.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
             </a>
           </div>
+        </div>
 
-          <div class="resume-body grid">
-            <div class="resume-block">
-              <h4 class="block-title">EDUCATION</h4>
-              <div class="resume-item">
-                <div class="item-head">
-                  <strong>BMS College of Engineering</strong>
-                  <span class="item-date">2026 – 2030</span>
-                </div>
-                <p>B.Tech Civil Engineering</p>
-                <small class="item-sub">Combining analytical engineering fundamentals with independent UI/UX and web development mastery.</small>
-              </div>
+        <div class="hero-visual">
+          <div class="code-card">
+            <div class="code-card-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="card-filename">developer.json</span>
             </div>
+            <pre class="code-content"><code>{
+  <span class="token-key">"name"</span>: <span class="token-string">"Vaishnavi Shekar"</span>,
+  <span class="token-key">"role"</span>: <span class="token-string">"Computer Science Engineer"</span>,
+  <span class="token-key">"focus"</span>: [<span class="token-string">"Full Stack Development"</span>, <span class="token-string">"Data Structures"</span>, <span class="token-string">"AI/ML"</span>],
+  <span class="token-key">"status"</span>: <span class="token-string">"Ready to innovate & contribute"</span>
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="resume-block">
-              <h4 class="block-title">VERIFIED LEARNING & CERTIFICATIONS</h4>
-              <ul class="cert-list">
-                <li>
-                  <strong>Anthropic AI Fluency</strong>
-                  <span class="cert-desc">AI-assisted workflows, prompt iteration, & safety fundamentals</span>
-                </li>
-                <li>
-                  <strong>Microsoft AI/ML Fundamentals</strong>
-                  <span class="cert-desc">Core concepts in artificial intelligence and machine learning</span>
-                </li>
-                <li>
-                  <strong>Harvard CS50x</strong>
-                  <span class="cert-desc">In Progress — Computer Science Foundations</span>
-                </li>
-                <li>
-                  <strong>Python Programming</strong>
-                  <span class="cert-desc">Active Skill Development & Logic Building</span>
-                </li>
-              </ul>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01. Overview</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I am a Computer Science undergraduate with a passion for software engineering, full-stack web technologies, and computational logic. I thrive at the intersection of clean architecture and user-focused design.
+            </p>
+            <p>
+              Through academic work and hands-on projects, I have developed strong analytical foundations in data structures, algorithms, database systems, and object-oriented programming.
+            </p>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number">B.Tech</span>
+                <span class="stat-label">Computer Science</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Core Projects</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">2026</span>
+                <span class="stat-label">Graduation Year</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION (Dark Contrast Ending) -->
-    <section class="section section-dark section-contact" id="contact">
-      <div class="container text-center reveal">
-        <span class="section-subtitle accent-text">START A CONVERSATION</span>
-        <h2 class="contact-headline light-text">
-          Let's build something<br />worth remembering.
-        </h2>
-        <p class="contact-sub light-sub">
-          Open for UI/UX projects, web development opportunities, and collaborative initiatives.
+    <!-- Skills Section -->
+    <section id="skills" class="section alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02. Capabilities</span>
+          <h2 class="section-title">Technical Expertise</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1 -->
+          <div class="skill-card">
+            <div class="skill-card-icon"><i class="fa-solid fa-code-branch"></i></div>
+            <h3>Languages</h3>
+            <div class="tag-cloud">
+              <span class="tag">C++</span>
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML5 / CSS3</span>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skill-card">
+            <div class="skill-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>Frameworks &amp; Tools</h3>
+            <div class="tag-cloud">
+              <span class="tag">React.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">Git &amp; GitHub</span>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skill-card">
+            <div class="skill-card-icon"><i class="fa-solid fa-database"></i></div>
+            <h3>Core CS &amp; Databases</h3>
+            <div class="tag-cloud">
+              <span class="tag">Data Structures</span>
+              <span class="tag">Algorithms</span>
+              <span class="tag">DBMS / MySQL</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">OOPs</span>
+              <span class="tag">OS &amp; Networking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03. Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="folder-icon"><i class="fa-regular fa-folder-open"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/vaishnavi-shekar" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Smart Academic Management System</h3>
+            <p class="project-description">
+              A comprehensive platform for tracking student performance, attendance metrics, and course schedules with automated report generation.
+            </p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>Node.js</span>
+              <span>SQL</span>
+              <span>Express</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="folder-icon"><i class="fa-regular fa-folder-open"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/vaishnavi-shekar" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Interactive Web Applications</h3>
+            <p class="project-description">
+              Responsive front-end application built with clean modular CSS and JavaScript, featuring smooth animations and asynchronous data fetching.
+            </p>
+            <div class="project-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>REST APIs</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="folder-icon"><i class="fa-regular fa-folder-open"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/vaishnavi-shekar" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Algorithmic Visualizer</h3>
+            <p class="project-description">
+              An interactive visualizer for classic sorting and searching algorithms, helping students understand step-by-step state changes.
+            </p>
+            <div class="project-tags">
+              <span>C++</span>
+              <span>Data Structures</span>
+              <span>Algorithms</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Education Section -->
+    <section id="experience" class="section alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04. Journey</span>
+          <h2 class="section-title">Education &amp; Experience</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 — Present</span>
+              <h3>B.Tech in Computer Science &amp; Engineering</h3>
+              <p class="timeline-org">University / Institute</p>
+              <p>Relevant Coursework: Data Structures &amp; Algorithms, Database Systems, Web Engineering, Operating Systems, Software Engineering.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot alt"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024</span>
+              <h3>Academic &amp; Personal Projects</h3>
+              <p class="timeline-org">Self-Directed &amp; Team Collaborations</p>
+              <p>Built full-stack applications, designed UI workflows, and practiced core software principles through hands-on development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container text-center">
+        <div class="section-header center">
+          <span class="section-tag">05. Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="title-bar center"></div>
+        </div>
+
+        <p class="contact-lead">
+          I am actively seeking internship and entry-level engineering roles. Whether you have a question, opportunity, or just want to connect, feel free to reach out!
         </p>
 
-        <div class="contact-links">
-          <a href="mailto:vaishnavishekar@example.com" class="contact-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>Email Me</span>
+        <div class="contact-cta-group">
+          <a href="mailto:vaishnavi.shekar@example.com" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-paper-plane"></i> Send an Email
           </a>
-
-          <a href="https://github.com/vaishnavi-shekar" target="_blank" rel="noopener" class="contact-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span>GitHub</span>
+          <a href="./Vaishnavi_Shekar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-file-pdf"></i> Download Resume
           </a>
-
-          <div class="contact-btn disabled">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/></svg>
-            <span>LinkedIn (Coming Soon)</span>
-          </div>
         </div>
-
-        <footer class="footer">
-          <p>© 2026 Vaishnavi Shekar. Designed & coded with precision.</p>
-        </footer>
       </div>
     </section>
-
   </main>
 
-  <!-- CASE STUDY MODALS -->
-  
-  <!-- Modal 1: AURA -->
-  <div class="modal" id="modal-aura" aria-hidden="true">
-    <div class="modal-overlay" tabindex="-1" data-close></div>
-    <div class="modal-container" role="dialog" aria-modal="true">
-      <button class="modal-close" data-close aria-label="Close modal">×</button>
-      <div class="modal-content">
-        <span class="modal-meta">01 / CASE STUDY</span>
-        <h2>AURA Fine Dining Web Experience</h2>
-        
-        <div class="cs-section">
-          <h3>01 Overview</h3>
-          <p>AURA is a self-initiated restaurant UI/UX design project aiming to bridge editorial luxury visual identity with intuitive online table reservations and menu exploration.</p>
-        </div>
-
-        <div class="cs-section">
-          <h3>02 Problem</h3>
-          <p>Traditional restaurant websites suffer from cluttered menus, PDF links that fail on mobile devices, and complex multi-step booking flows that lead to lost reservations.</p>
-        </div>
-
-        <div class="cs-section">
-          <h3>03 Key Solutions</h3>
-          <ul>
-            <li>Mobile-first menu browsing with category pills and dietary filters.</li>
-            <li>Direct 2-click reservation flow integrated into the navigation.</li>
-            <li>High-contrast editorial typography ensuring WCAG AA readability.</li>
-          </ul>
-        </div>
-
-        <div class="cs-section">
-          <h3>04 Responsive Design & Implementation</h3>
-          <p>Built with pure semantic HTML, custom CSS grid layouts, and zero heavy dependencies for lightning-fast page speed.</p>
-        </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>Designed &amp; Developed by <strong>Vaishnavi Shekar</strong></p>
+      <div class="footer-socials">
+        <a href="https://github.com/vaishnavi-shekar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/vaishnavi-shekar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
     </div>
-  </div>
-
-  <!-- Modal 2: PULSE -->
-  <div class="modal" id="modal-pulse" aria-hidden="true">
-    <div class="modal-overlay" tabindex="-1" data-close></div>
-    <div class="modal-container" role="dialog" aria-modal="true">
-      <button class="modal-close" data-close aria-label="Close modal">×</button>
-      <div class="modal-content">
-        <span class="modal-meta">02 / CASE STUDY</span>
-        <h2>PULSE AI Dashboard System</h2>
-        
-        <div class="cs-section">
-          <h3>01 System Vision</h3>
-          <p>An analytics dashboard tailored for machine learning ops teams who require real-time visibility into model latency, token consumption, and prompt optimization.</p>
-        </div>
-
-        <div class="cs-section">
-          <h3>02 Information Hierarchy</h3>
-          <p>High-density data requires visual breathing room. PULSE utilizes strict contrast tiers, sparklines, and status badges to draw attention to system anomalies immediately.</p>
-        </div>
-
-        <div class="cs-section">
-          <h3>03 Accessibility Standards</h3>
-          <p>All chart colors pass color-blindness simulation tests, utilizing double-encoding (color + text labels) for critical metric statuses.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 3: UX Redesign -->
-  <div class="modal" id="modal-ux" aria-hidden="true">
-    <div class="modal-overlay" tabindex="-1" data-close></div>
-    <div class="modal-container" role="dialog" aria-modal="true">
-      <button class="modal-close" data-close aria-label="Close modal">×</button>
-      <div class="modal-content">
-        <span class="modal-meta">03 / CASE STUDY</span>
-        <h2>Fintech Checkout Friction Reduction</h2>
-        
-        <div class="cs-section">
-          <h3>01 Problem & Audience</h3>
-          <p>Mobile users experienced a 42% drop-off on step 3 of a multi-page checkout flow due to unnecessary form fields.</p>
-        </div>
-
-        <div class="cs-section">
-          <h3>02 Wireframing & Transformation</h3>
-          <p>Consolidated 5 separate steps into 1 smart, context-aware payment sheet, prioritizing Apple Pay/One-Click solutions.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
