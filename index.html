@@ -1,12 +1,450 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <h1>My Favourite Movie</h1>
- </head>
- <p>
-    i have many favourites but it's madagascar
- </p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Shekar | Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <img src="dog.jpeg">
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="#hero" class="nav-logo">Vaishnavi<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#research">Research & Case Studies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="Vaishnavi_Shekar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-btn">
+                    <i class="fa-solid fa-file-pdf"></i> Resume
+                </a>
+            </div>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#research" class="mobile-link">Research & Case Studies</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#certifications" class="mobile-link">Certifications</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+            <li>
+                <a href="Vaishnavi_Shekar_Resume.pdf" target="_blank" class="btn btn-primary mobile-btn">
+                    <i class="fa-solid fa-file-pdf"></i> View Resume
+                </a>
+            </li>
+            <li>
+                <a href="Vaishnavi_Shekar_Resume.pdf" download="Vaishnavi_Shekar_Resume.pdf" class="btn btn-secondary mobile-btn">
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">Open to Internship Opportunities</span>
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Vaishnavi Shekar</span></h1>
+                <h2 class="hero-subtitle">B.Tech Student | Web Developer & UI/UX Designer</h2>
+                <p class="hero-description">
+                     B.Tech Civil Engineering student at BMS College of Engineering. Passionate about Web Development, UI/UX Design, AI tools, business research, and structured presentation design.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-briefcase"></i> View My Work
+                    </a>
+                    <a href="Vaishnavi_Shekar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fa-solid fa-eye"></i> View Resume
+                    </a>
+                    <a href="Vaishnavi_Shekar_Resume.pdf" download="Vaishnavi_Shekar_Resume.pdf" class="btn btn-outline">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="avatar-card">
+                    <div class="avatar-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="avatar-info">
+                        <h3>Vaishnavi Shekar</h3>
+                        <p><i class="fa-solid fa-location-dot red-accent"></i> Bengaluru, Karnataka</p>
+                        <p><i class="fa-solid fa-graduation-cap blue-accent"></i> BMS College of Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text-card">
+                    <h3>Technical Curiosity & Academic Rigor</h3>
+                    <p>
+                        I am a B.Tech Civil Engineering student at BMS College of Engineering with a strong drive for technology, UI/UX design, and web development. I focus on converting complex information into intuitive visual designs, sleek web user interfaces, and structured business presentations.
+                    </p>
+                    <p>
+                        My background combines systematic analytical thinking with hands-on technical tools including Python, web fundamentals, modern AI models, and presentation design suites.
+                    </p>
+                    <div class="highlights-grid">
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-bolt red-accent"></i>
+                            <div>
+                                <h4>Fast Learner</h4>
+                                <p>Rapidly adopting new frameworks, UI tools, and programming paradigms.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-bullseye red-accent"></i>
+                            <div>
+                                <h4>Detail Oriented</h4>
+                                <p>Precision in design, clean front-end syntax, and thoroughly researched data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education Timeline</h3>
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <span class="year">2026 – 2030</span>
+                            <h4>B.Tech in Civil Engineering</h4>
+                            <p class="institution">BMS College of Engineering, Bengaluru</p>
+                        </li>
+                        <li class="timeline-item">
+                            <span class="year">2026</span>
+                            <h4>Class 12 Senior Secondary</h4>
+                            <p class="institution">Completed Higher Secondary Education</p>
+                        </li>
+                        <li class="timeline-item">
+                            <span class="year">2024</span>
+                            <h4>Class 10 Secondary Education</h4>
+                            <p class="institution">Completed High School Foundation</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical <span>Skills</span> & Expertise</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development & Code</h3>
+                    <ul class="skill-list">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Responsive Web Design</li>
+                        <li>Python (Currently Learning)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>UI/UX & Design</h3>
+                    <ul class="skill-list">
+                        <li>UI/UX Wireframing & Layouts</li>
+                        <li>Canva Pro</li>
+                        <li>Microsoft PowerPoint Design</li>
+                        <li>Information Architecture</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>AI Tools & Workflows</h3>
+                    <ul class="skill-list">
+                        <li>ChatGPT & Prompting</li>
+                        <li>Claude (Anthropic Workflow)</li>
+                        <li>Perplexity AI Research</li>
+                        <li>AI-Assisted Prototyping</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>Research & Strategy</h3>
+                    <ul class="skill-list">
+                        <li>Business & Market Research</li>
+                        <li>Data Synthesis & Analysis</li>
+                        <li>Structured Case Studies</li>
+                        <li>Technical Documentation</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Case Studies Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <h2 class="section-title">In-Depth <span>Research & Case Studies</span></h2>
+            <p class="section-intro">Comprehensive, structured research investigations blending domain analytics, AI workflow synthesis, and UI/UX presentation methodology.</p>
+
+            <div class="research-grid">
+                
+                <article class="research-card">
+                    <div class="research-header">
+                        <span class="category-tag">AI & Industry Transformation</span>
+                        <span class="research-date">2026 Analysis</span>
+                    </div>
+                    <h3>Comparative Evaluation of Enterprise Generative AI Workflows</h3>
+                    <p class="research-summary">
+                        A rigorous comparative investigation examining output consistency, contextual adherence, and business communication workflows across Anthropic Claude, OpenAI ChatGPT, and Perplexity AI.
+                    </p>
+                    <div class="research-details">
+                        <h4>Key Methodological Highlights:</h4>
+                        <ul>
+                            <li>Formulated standardized prompt engineering metrics for quantitative evaluation.</li>
+                            <li>Mapped real-world business research synthesis times, reducing output iteration cycles.</li>
+                            <li>Designed a clean, multi-slide presentation architecture for executive reporting.</li>
+                        </ul>
+                    </div>
+                    <div class="card-tech-stack">
+                        <span>Claude</span>
+                        <span>Perplexity</span>
+                        <span>ChatGPT</span>
+                        <span>Information Design</span>
+                    </div>
+                </article>
+
+                <article class="research-card">
+                    <div class="research-header">
+                        <span class="category-tag">UI/UX & Web Accessibility</span>
+                        <span class="research-date">2026 Case Study</span>
+                    </div>
+                    <h3>Modern Web Interface Design & Cognitive Load Optimization</h3>
+                    <p class="research-summary">
+                        An exploration of color psychology, dark-theme contrast ratios, and visual hierarchy standards applied to student and early-career portfolio platforms.
+                    </p>
+                    <div class="research-details">
+                        <h4>Key Methodological Highlights:</h4>
+                        <ul>
+                            <li>Evaluated WCAG 2.1 compliance metrics across dark UI themes.</li>
+                            <li>Analyzed user navigation patterns to optimize call-to-action visibility.</li>
+                            <li>Designed responsive wireframes prioritizing typography hierarchy and contrast.</li>
+                        </ul>
+                    </div>
+                    <div class="card-tech-stack">
+                        <span>UI/UX</span>
+                        <span>Figma Concepts</span>
+                        <span>CSS Architecture</span>
+                        <span>Accessibility</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fa-solid fa-folder-open project-folder-icon"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/vaishnavi-shekar/potfolio" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>Personal Portfolio Website (V2)</h3>
+                        <p class="project-description">
+                            A fully responsive, dark-themed developer portfolio crafted with HTML5, CSS3, and JavaScript. Designed with clean semantic code, tailored UI/UX design, dark/blood red accents, and optimized performance.
+                        </p>
+                        <div class="card-tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fa-solid fa-display project-folder-icon"></i>
+                        </div>
+                        <h3>Professional Business Presentation Suite</h3>
+                        <p class="project-description">
+                            A curated collection of research-driven presentation decks constructed using Canva Pro and Microsoft PowerPoint. Translates technical data into structured visual layouts for business analysis.
+                        </p>
+                        <div class="card-tech-stack">
+                            <span>Canva Pro</span>
+                            <span>PowerPoint</span>
+                            <span>Research</span>
+                            <span>Visual Hierarchy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fa-solid fa-brain project-folder-icon"></i>
+                        </div>
+                        <h3>AI-Integrated Research & Summarization Workflows</h3>
+                        <p class="project-description">
+                            Custom prompt chains and research methodologies leveraging Anthropic Claude and Perplexity to analyze extensive documents and convert raw information into clear executive summaries.
+                        </p>
+                        <div class="card-tech-stack">
+                            <span>Claude</span>
+                            <span>Perplexity</span>
+                            <span>Prompt Design</span>
+                            <span>Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Learning Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">Certifications & <span>Continuous Learning</span></h2>
+            <div class="certifications-grid">
+                
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fa-solid fa-award red-accent"></i></div>
+                    <div class="cert-info">
+                        <h3>Anthropic AI Fluency</h3>
+                        <p class="issuer">Anthropic Certification</p>
+                        <p class="cert-desc">Demonstrated practical proficiency in utilizing generative AI models, contextual prompt structuring, and workflow optimization.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card learning-card">
+                    <div class="cert-icon"><i class="fa-solid fa-book-open blue-accent"></i></div>
+                    <div class="cert-info">
+                        <span class="status-badge">Currently Enrolled</span>
+                        <h3>Harvard CS50x</h3>
+                        <p class="issuer">Harvard University / edX</p>
+                        <p class="cert-desc">Rigorous foundation in computer science, algorithmic thinking, data structures, and software fundamentals.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card learning-card">
+                    <div class="cert-icon"><i class="fa-brands fa-python blue-accent"></i></div>
+                    <div class="cert-info">
+                        <span class="status-badge">In Progress</span>
+                        <h3>Python Programming</h3>
+                        <p class="issuer">Self-Paced / Technical Curriculum</p>
+                        <p class="cert-desc">Developing core programming skills in Python syntax, data manipulation, and automation logic.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card learning-card">
+                    <div class="cert-icon"><i class="fa-solid fa-microchip blue-accent"></i></div>
+                    <div class="cert-info">
+                        <span class="status-badge">In Progress</span>
+                        <h3>Microsoft AI Fundamentals</h3>
+                        <p class="issuer">Microsoft</p>
+                        <p class="cert-desc">Fundamental concepts of machine learning, computer vision, and responsible artificial intelligence principles.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <p class="section-intro">I am actively looking for internship opportunities where I can apply my web development, UI/UX design, research, and technical skills. Feel free to reach out!</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:vaishnavishekar2008@gmail.com">vaishnavishekar2008@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+918951675099">+91 8951675099</a> / <a href="tel:+918139999349">+91 8139999349</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bengaluru, Karnataka, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fa-brands fa-github"></i></div>
+                        <div>
+                            <h4>GitHub Portfolio Repo</h4>
+                            <a href="https://github.com/vaishnavi-shekar/potfolio" target="_blank" rel="noopener noreferrer">github.com/vaishnavi-shekar/potfolio</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-actions">
+                        <a href="Vaishnavi_Shekar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fa-solid fa-file-pdf"></i> Open Resume PDF
+                        </a>
+                        <a href="Vaishnavi_Shekar_Resume.pdf" download="Vaishnavi_Shekar_Resume.pdf" class="btn btn-secondary">
+                            <i class="fa-solid fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2026 Vaishnavi Shekar. Built with clean HTML, CSS, and JS.</p>
+            <a href="https://github.com/vaishnavi-shekar/potfolio" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fa-brands fa-github"></i> GitHub Repository
+            </a>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 </body>
-
-
+</html>
